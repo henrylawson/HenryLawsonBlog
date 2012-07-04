@@ -1,0 +1,104 @@
+@font-face {
+	font-family: 'bebas';
+	src: url('../fonts/bebas.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+body {
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family:arial;
+	font-size:12pt;
+}
+a, a:hover, a:visited {
+	color:#000;
+	text-decoration:underline;
+}
+a:hover {
+	color:#666;
+}
+p {
+	text-align:justify;
+	line-height:150%;
+}
+.container {
+	margin-left:10px;
+	margin-right:15px;
+	background:#dedede;
+}
+.header {
+	padding:0 10px 0 10px;
+	border-bottom:1px solid #000;
+}
+.header .title {
+	padding-top:60px;
+	padding-bottom:10px;
+	position:relative;
+}
+.header .title h1 {
+	margin:0;
+	padding:0;
+	font-family:bebas;
+	font-size:70pt;
+}
+.header .title .link-area {
+	position:absolute;
+	bottom:16px;
+	right:5px;
+}
+.content {
+	padding:30px 0px 20px 0px;
+	background:#fff;
+}
+.content .title {
+	position:relative;
+	padding:3px 0;
+}
+.content .title h2 {
+	font-family:bebas, arial;
+	font-size:25pt;
+	font-weight:bold;
+	background:#000;
+	color:#fff;
+	padding:3px 10px 3px 10px;
+	display:inline;
+}
+.content .title .date {
+	position:absolute;
+	right:0;
+	bottom:0;
+	padding-top:25px;
+	font-weight:bold;
+	font-family:bebas;
+	font-weight:bold;
+	font-size:15pt;
+}
+.footer {
+	padding:10px 10px 10px 10px;
+	border-top:1px solid #000;
+}
+.footer .title {
+	font-family:bebas;
+	font-size:16pt;
+	font-weight:bold;
+}
+.footer p {
+	font-size:90%;
+	color:#444;
+}
+ul.links {
+	padding:0;
+	margin:0;
+}
+ul.links li {
+	list-style:none;
+	display:inline;
+	margin-left:10px;
+	padding:0;
+}
+ul.links li a {
+	font-family:bebas;
+	font-size:12pt;
+	text-decoration:none;
+}

@@ -1,0 +1,22 @@
+.container {
+	min-width:252px;
+}
+.header .title {
+	padding-top:20px;
+}
+.header .title h1 {
+	font-size:50pt;
+}
+.header .title .link-area {
+	position:relative;
+	margin-top:40px;
+}
+.content .title h2 {
+	display:inline;
+}
+.content .title .date {
+	position:relative;
+}
+p {
+	font-size:90%;
+}
