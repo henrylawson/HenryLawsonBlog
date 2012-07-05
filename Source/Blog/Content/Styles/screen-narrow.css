@@ -11,10 +11,11 @@
 	position:relative;
 	margin-top:40px;
 }
-.content .title h2 {
+.content .article .title h2 {
 	display:inline;
 }
-.content .title .date {
+.content .article .title .date {
+    display: block;
 	position:relative;
 }
 p {
