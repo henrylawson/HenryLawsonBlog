@@ -9,12 +9,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6F591D
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Tests", "Blog.Tests\Blog.Tests.csproj", "{1FE6CE51-F4A8-487E-86DB-A5E55F598D45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FE6CE51-F4A8-487E-86DB-A5E55F598D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FE6CE51-F4A8-487E-86DB-A5E55F598D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FE6CE51-F4A8-487E-86DB-A5E55F598D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FE6CE51-F4A8-487E-86DB-A5E55F598D45}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50D1E0F1-48B4-48D3-8C4C-7BB3295029EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{50D1E0F1-48B4-48D3-8C4C-7BB3295029EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50D1E0F1-48B4-48D3-8C4C-7BB3295029EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
