@@ -28,4 +28,5 @@ _ReSharper*/
 *[Bb]uild-*/
 
 #Nuget Packages
-/packages
+/packages/*
+!/packages/repositories.config
