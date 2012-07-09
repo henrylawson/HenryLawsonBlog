@@ -13,9 +13,6 @@ namespace Blog.Models
 
         public string Title { get; set; }
 
-        public string FormattedDate
-        {
-            get { return Date.ToString("d MMM, yyyy"); }
-        }
+        public string Body { get; set; }
     }
 }

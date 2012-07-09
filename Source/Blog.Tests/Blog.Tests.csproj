@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
@@ -56,7 +59,9 @@
   <ItemGroup>
     <Compile Include="Controllers\ArticleControllerTest.cs" />
     <Compile Include="Models\ArticleTest.cs" />
+    <Compile Include="Presenters\ArticleIndexPresenterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ArticleRepositoryTest.cs" />
     <Compile Include="Services\ArticleServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>

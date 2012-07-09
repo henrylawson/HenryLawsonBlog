@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using Blog.Controllers;
 using Blog.Models;
+using Blog.Presenters;
+using Blog.Repositories;
 using Blog.Services;
 using Moq;
 using NUnit.Framework;
@@ -14,42 +15,31 @@ namespace Blog.Tests.Controllers
     {
         private ArticleController articleController;
         private Mock<ArticleService> mockArticleService;
-        private IList<Article> articles;
+        private MultipleArticlePresenter multipleArticlePresenter;
 
         [SetUp]
         public void SetUp()
         {
-            articles = CreateArticles();
-            mockArticleService = new Mock<ArticleService>(articles);
-            mockArticleService.Setup(service => service.All()).Returns(articles);
+            multipleArticlePresenter = new MultipleArticlePresenter();
+            mockArticleService = new Mock<ArticleService>(null);
+            mockArticleService.Setup(service => service.Home()).Returns(multipleArticlePresenter);
             articleController = new ArticleController(mockArticleService.Object);
         }
 
         [Test]
         public void Index_UseIndexView_Always()
         {
-            var result = Test(articleController.Index());
+            var result = Test(articleController.Home());
 
-            Assert.That(result.ViewName, Is.EqualTo("Index"));
+            Assert.That(result.ViewName, Is.EqualTo("Home"));
         }
 
         [Test]
         public void Index_UseArticleServiceTop_Always()
         {
-            var result = Test(articleController.Index());
+            var result = Test(articleController.Home());
 
-            Assert.That(result.Model, Is.SameAs(articles[0]));
-        }
-
-        private static IList<Article> CreateArticles()
-        {
-            return new[]
-            {
-                new Article {Title = "Title 1"},         
-                new Article {Title = "Title 2"},         
-                new Article {Title = "Title 3"},         
-                new Article {Title = "Title 4"}         
-            };
+            Assert.That(result.Model, Is.SameAs(multipleArticlePresenter));
         }
 
         private static ViewResult Test(ActionResult result)

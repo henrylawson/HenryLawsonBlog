@@ -1,30 +1,42 @@
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Blog.Models;
+using Blog.Presenters;
+using Blog.Repositories;
 
 namespace Blog.Services
 {
     public class ArticleService
     {
-        private readonly Dictionary<string, Article> dictionary;
+        private const int FullArticleCount = 3;
+        private readonly ArticleRepository articleRepository;
 
-        public ArticleService(IEnumerable<Article> articles)
+        public ArticleService(ArticleRepository articleRepository)
         {
-            dictionary = new Dictionary<string, Article>();
-            foreach (var article in articles)
-            {
-                dictionary.Add(article.SlugTitle, article);
-            }
+            Mapper.CreateMap<Article, ArticlePresenter>();
+            Mapper.CreateMap<Article, ArticleIndexPresenter>();
+            this.articleRepository = articleRepository;
         }
 
-        public virtual Article Retrieve(string slugTitle)
+        public virtual MultipleArticlePresenter Home()
         {
-            return dictionary[slugTitle];
+            var articles = articleRepository.All();
+            return new MultipleArticlePresenter
+                {
+                    Articles = Map(articles.Take(FullArticleCount).ToList()),
+                    ArticleIndexes = MapIndexes(articles.Skip(FullArticleCount).ToList())
+                };
         }
 
-        public virtual IList<Article> All()
+        private static IList<ArticleIndexPresenter> MapIndexes(IList<Article> articles)
         {
-            return dictionary.Values.OrderByDescending(article => article.Date).ToList();
+            return Mapper.Map<IList<Article>, IList<ArticleIndexPresenter>>(articles);
+        }
+
+        private static IList<ArticlePresenter> Map(IList<Article> articles)
+        {
+            return Mapper.Map<IList<Article>, IList<ArticlePresenter>>(articles);
         }
     }
 }

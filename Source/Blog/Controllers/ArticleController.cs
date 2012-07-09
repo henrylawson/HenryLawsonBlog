@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Web.Mvc;
 using Blog.Services;
 
@@ -13,9 +12,9 @@ namespace Blog.Controllers
             this.articleService = articleService;
         }
 
-        public ActionResult Index()
+        public ActionResult Home()
         {
-            return View("Index", articleService.All().First());
+            return View("Home", articleService.Home());
         }
     }
 }

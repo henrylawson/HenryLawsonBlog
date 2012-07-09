@@ -18,17 +18,19 @@ namespace Blog.Tests.Models
         [Test]
         public void SlugTitle_SlugifiedTitle_WhenTitleNotSet()
         {
-            var article = new Article();
+            var article = CreateArticle();
 
             Assert.That(article.SlugTitle, Is.EqualTo(string.Empty));
         }
 
-        [Test]
-        public void FormattedDate_FormattedData_WhenDateIsSet()
+        private static Article CreateArticle()
         {
-            var article = new Article {Date = new DateTime(2012, 12, 07)};
-
-            Assert.That(article.FormattedDate, Is.EqualTo("7 Dec, 2012"));
+            return new Article
+                {
+                    Title = "Some title",
+                    Date = new DateTime(),
+                    Body = "Article contents."
+                };
         }
     }
 }
