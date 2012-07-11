@@ -19,6 +19,7 @@ namespace Blog.Tests.Models
         public void SlugTitle_SlugifiedTitle_WhenTitleNotSet()
         {
             var article = CreateArticle();
+            article.Title = string.Empty;
 
             Assert.That(article.SlugTitle, Is.EqualTo(string.Empty));
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Blog.Models;
 using Blog.Repositories;
+using Blog.Repositories.Data;
 using Blog.Services;
 using Moq;
 using NUnit.Framework;
@@ -13,12 +14,15 @@ namespace Blog.Tests.Services
         private Mock<ArticleRepository> mockArticleRepository;
         private ArticleService articleService;
         private IList<Article> articles;
+        private Mock<IArticleCollection> mockArticleCollection;
 
         [SetUp]
         public void SetUp()
         {
             articles = CreateArticles();
-            mockArticleRepository = new Mock<ArticleRepository>(articles);
+            mockArticleCollection = new Mock<IArticleCollection>();
+            mockArticleCollection.Setup(collection => collection.Entries).Returns(articles);
+            mockArticleRepository = new Mock<ArticleRepository>(mockArticleCollection.Object);
             articleService = new ArticleService(mockArticleRepository.Object);
         }
 
