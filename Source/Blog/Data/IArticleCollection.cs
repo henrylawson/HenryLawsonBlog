@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Blog.Models;
 
-namespace Blog.Repositories.Data
+namespace Blog.Data
 {
     public interface IArticleCollection
     {

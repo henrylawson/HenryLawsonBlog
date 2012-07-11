@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Blog.Data;
 using Blog.Models;
-using Blog.Repositories.Data;
 
 namespace Blog.Repositories
 {

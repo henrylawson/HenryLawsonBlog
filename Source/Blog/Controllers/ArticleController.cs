@@ -16,5 +16,10 @@ namespace Blog.Controllers
         {
             return View("Home", articleService.Home());
         }
+
+        public ActionResult Article(string slugtitle)
+        {
+            return null;
+        }
     }
 }

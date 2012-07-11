@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Blog.Data;
 using Blog.Models;
 using Blog.Repositories;
-using Blog.Repositories.Data;
 using Moq;
 using NUnit.Framework;
 
