@@ -11,18 +11,16 @@ namespace Blog.Tests.Services
     [TestFixture]
     public class ArticleServiceTest
     {
-        private Mock<ArticleRepository> mockArticleRepository;
+        private Mock<IArticleRepository> mockArticleRepository;
         private ArticleService articleService;
         private IList<Article> articles;
-        private Mock<IArticleCollection> mockArticleCollection;
 
         [SetUp]
         public void SetUp()
         {
             articles = CreateArticles();
-            mockArticleCollection = new Mock<IArticleCollection>();
-            mockArticleCollection.Setup(collection => collection.Entries).Returns(articles);
-            mockArticleRepository = new Mock<ArticleRepository>(mockArticleCollection.Object);
+            mockArticleRepository = new Mock<IArticleRepository>();
+            mockArticleRepository.Setup(repository => repository.All()).Returns(articles);
             articleService = new ArticleService(mockArticleRepository.Object);
         }
 

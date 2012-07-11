@@ -7,12 +7,12 @@ using Blog.Repositories;
 
 namespace Blog.Services
 {
-    public class ArticleService
+    public class ArticleService : IArticleService
     {
         private const int FullArticleCount = 3;
-        private readonly ArticleRepository articleRepository;
+        private readonly IArticleRepository articleRepository;
 
-        public ArticleService(ArticleRepository articleRepository)
+        public ArticleService(IArticleRepository articleRepository)
         {
             Mapper.CreateMap<Article, ArticlePresenter>();
             Mapper.CreateMap<Article, ArticleIndexPresenter>();

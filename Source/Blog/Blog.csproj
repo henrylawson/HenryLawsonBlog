@@ -132,7 +132,9 @@
     <Compile Include="Repositories\ArticleRepository.cs" />
     <Compile Include="Repositories\Data\ArticleCollection.cs" />
     <Compile Include="Repositories\Data\IArticleCollection.cs" />
+    <Compile Include="Repositories\IArticleRepository.cs" />
     <Compile Include="Services\ArticleService.cs" />
+    <Compile Include="Services\IArticleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

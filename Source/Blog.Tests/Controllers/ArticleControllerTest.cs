@@ -14,14 +14,14 @@ namespace Blog.Tests.Controllers
     public class ArticleControllerTest
     {
         private ArticleController articleController;
-        private Mock<ArticleService> mockArticleService;
+        private Mock<IArticleService> mockArticleService;
         private MultipleArticlePresenter multipleArticlePresenter;
 
         [SetUp]
         public void SetUp()
         {
             multipleArticlePresenter = new MultipleArticlePresenter();
-            mockArticleService = new Mock<ArticleService>(null);
+            mockArticleService = new Mock<IArticleService>();
             mockArticleService.Setup(service => service.Home()).Returns(multipleArticlePresenter);
             articleController = new ArticleController(mockArticleService.Object);
         }

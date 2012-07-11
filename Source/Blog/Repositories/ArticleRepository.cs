@@ -5,7 +5,7 @@ using Blog.Repositories.Data;
 
 namespace Blog.Repositories
 {
-    public class ArticleRepository
+    public class ArticleRepository : IArticleRepository
     {
         private readonly Dictionary<string, Article> dictionary;
 

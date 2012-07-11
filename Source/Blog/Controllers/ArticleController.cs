@@ -5,9 +5,9 @@ namespace Blog.Controllers
 {
     public class ArticleController : Controller
     {
-        private readonly ArticleService articleService;
+        private readonly IArticleService articleService;
 
-        public ArticleController(ArticleService articleService)
+        public ArticleController(IArticleService articleService)
         {
             this.articleService = articleService;
         }
