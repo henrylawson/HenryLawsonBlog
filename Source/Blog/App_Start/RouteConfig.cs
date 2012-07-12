@@ -16,6 +16,12 @@ namespace Blog
             );
 
             routes.MapRoute(
+                name: "Atom",
+                url: "feed.atom",
+                defaults: new { controller = "Article", action = "Atom" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "",
                 defaults: new { controller = "Article", action = "Home" }

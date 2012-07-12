@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Net.Mime;
+using System.Text;
 using System.Web.Mvc;
 using Blog.Controllers;
 using Blog.Presenters;
@@ -13,12 +14,14 @@ namespace Blog.Tests.Controllers
     {
         private ArticleController articleController;
         private Mock<IArticleService> mockArticleService;
+        private Mock<IArticleAtomService> mockArticleAtomService;
 
         [SetUp]
         public void SetUp()
         {
             mockArticleService = new Mock<IArticleService>();
-            articleController = new ArticleController(mockArticleService.Object);
+            mockArticleAtomService = new Mock<IArticleAtomService>();
+            articleController = new ArticleController(mockArticleService.Object, mockArticleAtomService.Object);
         }
 
         [Test]
@@ -84,6 +87,24 @@ namespace Blog.Tests.Controllers
             Assert.That(result.Model, Is.SameAs(articleIndexPresenters));
         }
 
+        [Test]
+        public void Atom_ShouldProvideFeedResult_Always()
+        {
+            const string feedResult = "some string";
+            mockArticleAtomService.Setup(service => service.Feed()).Returns(feedResult);
+
+            var actionResult = TestAsContent(articleController.Atom());
+
+            Assert.That(actionResult.Content, Is.EqualTo(feedResult));
+            Assert.That(actionResult.ContentType, Is.EqualTo("text/xml"));
+            Assert.That(actionResult.ContentEncoding, Is.EqualTo(Encoding.Unicode));
+        }
+
+        private static ContentResult TestAsContent(ActionResult actionResult)
+        {
+            return actionResult as ContentResult;
+        }
+
         private static MultipleArticleIndexPresenter CreateMultipleArticleIndexPresenters()
         {
             return new MultipleArticleIndexPresenter();
@@ -92,11 +113,6 @@ namespace Blog.Tests.Controllers
         private static MultipleArticlePresenter CreateMultipleArticlePresenter()
         {
             return new MultipleArticlePresenter();
-        }
-
-        private static ArticlePresenter CreateArticlePresenter()
-        {
-            return new ArticlePresenter();
         }
 
         private static ViewResult Test(ActionResult result)
