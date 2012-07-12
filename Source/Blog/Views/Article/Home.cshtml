@@ -9,26 +9,4 @@
     @Html.Partial("_Article", article)    
 }
 
-<div class="other-articles">
-    <div class="title">
-        <h3>Other Articles</h3>
-    </div>
-    <ul class="indexes">
-        @foreach(var articleIndex in Model.ArticleIndexes)
-        {
-            <li>
-                <div class="index">
-                    <div class="right-arrow">
-                        &raquo;
-                    </div>
-                    <div class="date">
-                        @articleIndex.FormattedDate
-                    </div>    
-                    <div class="title">
-                        @Html.ActionLink(articleIndex.Title, "Single", new { slugTitle = articleIndex.SlugTitle })
-                    </div>    
-                </div>
-            </li>
-        }
-    </ul>
-</div>
+@Html.Partial("_Indexes", Model.Index)

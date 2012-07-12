@@ -1,7 +1,9 @@
-﻿@model System.Collections.Generic.IList<Blog.Presenters.ArticleIndexPresenter>
+﻿@model Blog.Presenters.MultipleArticleIndexPresenter
 
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-Hello
+<div class="article-index">
+    @Html.Partial("_Indexes", Model)
+</div>

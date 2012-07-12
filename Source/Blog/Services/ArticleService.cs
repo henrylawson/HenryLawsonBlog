@@ -9,7 +9,7 @@ namespace Blog.Services
 {
     public class ArticleService : IArticleService
     {
-        private const int FullArticleCount = 3;
+        private const int FullArticleCount = 2;
         private readonly IArticleRepository articleRepository;
 
         public ArticleService(IArticleRepository articleRepository)
@@ -22,11 +22,13 @@ namespace Blog.Services
         public MultipleArticlePresenter Home()
         {
             var articles = articleRepository.All();
-            return new MultipleArticlePresenter
+            var multipleArticlePresenter = new MultipleArticlePresenter
                 {
                     Articles = Map(articles.Take(FullArticleCount).ToList()),
-                    ArticleIndexes = MapIndexes(articles.Skip(FullArticleCount).ToList())
                 };
+            multipleArticlePresenter.Index.Title = "Other Articles";
+            multipleArticlePresenter.Index.Articles = MapIndexes(articles.Skip(FullArticleCount).ToList());
+            return multipleArticlePresenter;
         }
 
         public ArticlePresenter Article(string slugTitle)
@@ -34,9 +36,13 @@ namespace Blog.Services
             return Map(articleRepository.Retrieve(slugTitle));
         }
 
-        public IList<ArticleIndexPresenter> Index()
+        public MultipleArticleIndexPresenter Index()
         {
-            return MapIndexes(articleRepository.All());
+            return new MultipleArticleIndexPresenter
+                {
+                    Title = "Article Index", 
+                    Articles = MapIndexes(articleRepository.All())
+                };
         }
 
         private static IList<ArticleIndexPresenter> MapIndexes(IList<Article> articles)

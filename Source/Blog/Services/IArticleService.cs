@@ -7,6 +7,6 @@ namespace Blog.Services
     {
         MultipleArticlePresenter Home();
         ArticlePresenter Article(string slugTitle);
-        IList<ArticleIndexPresenter> Index();
+        MultipleArticleIndexPresenter Index();
     }
 }

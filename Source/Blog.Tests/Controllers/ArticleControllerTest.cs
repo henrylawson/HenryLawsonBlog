@@ -76,7 +76,7 @@ namespace Blog.Tests.Controllers
         [Test]
         public void Index_ShouldUseArticleServiceIndex_Always()
         {
-            var articleIndexPresenters = CreateArticleIndexPresenters();
+            var articleIndexPresenters = CreateMultipleArticleIndexPresenters();
             mockArticleService.Setup(service => service.Index()).Returns(articleIndexPresenters);
 
             var result = Test(articleController.Index());
@@ -84,9 +84,9 @@ namespace Blog.Tests.Controllers
             Assert.That(result.Model, Is.SameAs(articleIndexPresenters));
         }
 
-        private IList<ArticleIndexPresenter> CreateArticleIndexPresenters()
+        private static MultipleArticleIndexPresenter CreateMultipleArticleIndexPresenters()
         {
-            return new List<ArticleIndexPresenter>();
+            return new MultipleArticleIndexPresenter();
         }
 
         private static MultipleArticlePresenter CreateMultipleArticlePresenter()

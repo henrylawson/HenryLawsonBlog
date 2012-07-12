@@ -30,9 +30,10 @@ namespace Blog.Tests.Services
 
             Assert.That(multipleArticlePresenter.Articles[0].SlugTitle, Is.EqualTo(articles[0].SlugTitle));
             Assert.That(multipleArticlePresenter.Articles[1].SlugTitle, Is.EqualTo(articles[1].SlugTitle));
-            Assert.That(multipleArticlePresenter.Articles[2].SlugTitle, Is.EqualTo(articles[2].SlugTitle));
-            Assert.That(multipleArticlePresenter.ArticleIndexes[0].SlugTitle, Is.EqualTo(articles[3].SlugTitle));
-            Assert.That(multipleArticlePresenter.ArticleIndexes[1].SlugTitle, Is.EqualTo(articles[4].SlugTitle));
+            Assert.That(multipleArticlePresenter.Index.Title, Is.EqualTo("Other Articles"));
+            Assert.That(multipleArticlePresenter.Index.Articles[0].SlugTitle, Is.EqualTo(articles[2].SlugTitle));
+            Assert.That(multipleArticlePresenter.Index.Articles[1].SlugTitle, Is.EqualTo(articles[3].SlugTitle));
+            Assert.That(multipleArticlePresenter.Index.Articles[2].SlugTitle, Is.EqualTo(articles[4].SlugTitle));
         }
 
         [Test]
@@ -54,11 +55,11 @@ namespace Blog.Tests.Services
 
             var articleIndexes = articleService.Index();
 
-            Assert.That(articleIndexes[0].SlugTitle, Is.EqualTo(articles[0].SlugTitle));
-            Assert.That(articleIndexes[1].SlugTitle, Is.EqualTo(articles[1].SlugTitle));
-            Assert.That(articleIndexes[2].SlugTitle, Is.EqualTo(articles[2].SlugTitle));
-            Assert.That(articleIndexes[3].SlugTitle, Is.EqualTo(articles[3].SlugTitle));
-            Assert.That(articleIndexes[4].SlugTitle, Is.EqualTo(articles[4].SlugTitle));
+            Assert.That(articleIndexes.Articles[0].SlugTitle, Is.EqualTo(articles[0].SlugTitle));
+            Assert.That(articleIndexes.Articles[1].SlugTitle, Is.EqualTo(articles[1].SlugTitle));
+            Assert.That(articleIndexes.Articles[2].SlugTitle, Is.EqualTo(articles[2].SlugTitle));
+            Assert.That(articleIndexes.Articles[3].SlugTitle, Is.EqualTo(articles[3].SlugTitle));
+            Assert.That(articleIndexes.Articles[4].SlugTitle, Is.EqualTo(articles[4].SlugTitle));
         }
 
         private static IList<Article> CreateArticles()
