@@ -19,7 +19,7 @@ namespace Blog.Services
             this.articleRepository = articleRepository;
         }
 
-        public virtual MultipleArticlePresenter Home()
+        public MultipleArticlePresenter Home()
         {
             var articles = articleRepository.All();
             return new MultipleArticlePresenter
@@ -27,6 +27,16 @@ namespace Blog.Services
                     Articles = Map(articles.Take(FullArticleCount).ToList()),
                     ArticleIndexes = MapIndexes(articles.Skip(FullArticleCount).ToList())
                 };
+        }
+
+        public ArticlePresenter Article(string slugTitle)
+        {
+            return Map(articleRepository.Retrieve(slugTitle));
+        }
+
+        public IList<ArticleIndexPresenter> Index()
+        {
+            return MapIndexes(articleRepository.All());
         }
 
         private static IList<ArticleIndexPresenter> MapIndexes(IList<Article> articles)
@@ -37,6 +47,11 @@ namespace Blog.Services
         private static IList<ArticlePresenter> Map(IList<Article> articles)
         {
             return Mapper.Map<IList<Article>, IList<ArticlePresenter>>(articles);
+        }
+
+        private static ArticlePresenter Map(Article article)
+        {
+            return Mapper.Map<Article, ArticlePresenter>(article);
         }
     }
 }

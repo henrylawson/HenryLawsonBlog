@@ -30,7 +30,7 @@ namespace Blog.Tests.Repositories
         }
 
         [Test]
-        public void Retrieve_CorrectArticle_GivenTheSlugTitle()
+        public void Retrieve_ShouldReturnCorrectArticle_WhenGivenTheSlugTitle()
         {
             var article = articleService.Retrieve(articles[0].SlugTitle);
 
@@ -38,13 +38,13 @@ namespace Blog.Tests.Repositories
         }
 
         [Test]
-        public void Retrieve_Null_GivenARandomNonExisitingSlugTitle()
+        public void Retrieve_ShouldReturnNull_GivenARandomNonExisitingSlugTitle()
         {
             Assert.Throws<KeyNotFoundException>(() => articleService.Retrieve("random slug title that doesn't exist"));
         }
 
         [Test]
-        public void All_ListOfArticles_WhenTheyExist()
+        public void All_ShouldReturnAllArticles_WhenTheyExist()
         {
             var serviceArticles = articleService.All();
 
@@ -53,7 +53,7 @@ namespace Blog.Tests.Repositories
         }
 
         [Test]
-        public void All_ListOfArticles_SortedByDate()
+        public void All_ShouldReturnAllArticles_SortedByDate()
         {
             var serviceArticles = articleService.All();
 

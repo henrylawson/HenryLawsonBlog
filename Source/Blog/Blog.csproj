@@ -167,6 +167,15 @@
   <ItemGroup>
     <Content Include="Views\Article\Home.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\Single.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\_Article.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\Index.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

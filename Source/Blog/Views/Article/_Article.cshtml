@@ -1,0 +1,14 @@
+﻿@model Blog.Presenters.ArticlePresenter
+
+<div class="article">
+    <div class="title">
+        <h2>@Html.ActionLink(Model.Title, "Single", new { slugTitle = Model.SlugTitle })</h2>
+        <div class="date">
+            @Model.FormattedDate
+        </div>
+    </div>
+    <div class="body">
+        @Html.Raw(Model.Body)
+    </div>
+</div>
+

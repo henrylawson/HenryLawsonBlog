@@ -17,9 +17,14 @@ namespace Blog.Controllers
             return View("Home", articleService.Home());
         }
 
-        public ActionResult Article(string slugtitle)
+        public ActionResult Single(string slugTitle)
         {
-            return null;
+            return View("Single", articleService.Article(slugTitle));
+        }
+
+        public ActionResult Index()
+        {
+            return View("Index", articleService.Index());
         }
     }
 }

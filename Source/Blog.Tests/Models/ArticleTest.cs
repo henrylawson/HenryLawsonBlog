@@ -8,7 +8,7 @@ namespace Blog.Tests.Models
     public class ArticleTest
     {
         [Test]
-        public void SlugTitle_SlugifiedTitle_WhenTitleSet()
+        public void SlugTitle_ShouldSlugifyTitle_WhenTitleSet()
         {
             var article = new Article {Title = "A New Article Title"};
 
@@ -16,7 +16,7 @@ namespace Blog.Tests.Models
         }
 
         [Test]
-        public void SlugTitle_SlugifiedTitle_WhenTitleNotSet()
+        public void SlugTitle_ShouldSlugifyTitle_WhenTitleNotSet()
         {
             var article = CreateArticle();
             article.Title = string.Empty;

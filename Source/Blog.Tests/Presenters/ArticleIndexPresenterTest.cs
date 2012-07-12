@@ -8,7 +8,7 @@ namespace Blog.Tests.Presenters
     public class ArticleIndexPresenterTest
     {
         [Test]
-        public void FormattedDate_FormattedData_WhenDateIsSet()
+        public void FormattedDate_ShouldFormatDate_WhenDateIsSet()
         {
             var article = new ArticleIndexPresenter
                 {

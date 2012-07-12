@@ -11,21 +11,19 @@ namespace Blog.Tests.Services
     public class ArticleServiceTest
     {
         private Mock<IArticleRepository> mockArticleRepository;
-        private ArticleService articleService;
-        private IList<Article> articles;
+        private IArticleService articleService;
 
         [SetUp]
         public void SetUp()
         {
-            articles = CreateArticles();
             mockArticleRepository = new Mock<IArticleRepository>();
-            mockArticleRepository.Setup(repository => repository.All()).Returns(articles);
             articleService = new ArticleService(mockArticleRepository.Object);
         }
 
         [Test]
-        public void Home_RetrieveAndMapArticles_ProvidedByRepository()
+        public void Home_ShouldRetrieveAndMappedMultipleArticlePresenter_WhenProvided()
         {
+            var articles = CreateArticles();
             mockArticleRepository.Setup(repository => repository.All()).Returns(articles);
 
             var multipleArticlePresenter = articleService.Home();
@@ -37,17 +35,47 @@ namespace Blog.Tests.Services
             Assert.That(multipleArticlePresenter.ArticleIndexes[1].SlugTitle, Is.EqualTo(articles[4].SlugTitle));
         }
 
-        private IList<Article> CreateArticles()
+        [Test]
+        public void Article_ShouldRetrieveAndReturnArticle_WhenProvidedThelugTitle()
+        {
+            var article = CreateArticle();
+            mockArticleRepository.Setup(repository => repository.Retrieve(article.SlugTitle)).Returns(article);
+
+            var articlePresenter = articleService.Article(article.SlugTitle);
+
+            Assert.That(articlePresenter.SlugTitle, Is.EqualTo(article.SlugTitle));
+        }
+
+        [Test]
+        public void Index_ShouldRetrieveAndReturnMappedArticleIndexPresenters_WhenProvided()
+        {
+            var articles = CreateArticles();
+            mockArticleRepository.Setup(repository => repository.All()).Returns(articles);
+
+            var articleIndexes = articleService.Index();
+
+            Assert.That(articleIndexes[0].SlugTitle, Is.EqualTo(articles[0].SlugTitle));
+            Assert.That(articleIndexes[1].SlugTitle, Is.EqualTo(articles[1].SlugTitle));
+            Assert.That(articleIndexes[2].SlugTitle, Is.EqualTo(articles[2].SlugTitle));
+            Assert.That(articleIndexes[3].SlugTitle, Is.EqualTo(articles[3].SlugTitle));
+            Assert.That(articleIndexes[4].SlugTitle, Is.EqualTo(articles[4].SlugTitle));
+        }
+
+        private static IList<Article> CreateArticles()
         {
             return new[]
                 {
-                    new Article {Title = "Title 1"},
-                    new Article {Title = "Title 2"},
-                    new Article {Title = "Title 3"},
-                    new Article {Title = "Title 4"},
-                    new Article {Title = "Title 5"},
-                    new Article {Title = "Title 6"}
-                };
+                    CreateArticle("Title 1"),
+                    CreateArticle("Title 2"),
+                    CreateArticle("Title 3"),
+                    CreateArticle("Title 4"),
+                    CreateArticle("Title 5"),                    CreateArticle("Title 6")
+               };
+        }
+
+        private static Article CreateArticle(string title = "Some Title")
+        {
+            return new Article {Title = title};
         }
     }
 }
