@@ -60,7 +60,7 @@ namespace Blog.Services
         {
             var feed = new AtomFeed
                 {
-                    Id = new AtomId(new Uri("http://henrylawson.net/feed.atom")),
+                    Id = new AtomId(new Uri("http://henrylawson.net/atom")),
                     Title = new AtomTextConstruct("Henry Lawson"),
                     UpdatedOn = updatedOn
                 };

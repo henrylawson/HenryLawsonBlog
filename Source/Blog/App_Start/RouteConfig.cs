@@ -17,7 +17,7 @@ namespace Blog
 
             routes.MapRoute(
                 name: "Atom",
-                url: "feed.atom",
+                url: "atom",
                 defaults: new { controller = "Article", action = "Atom" }
             );
 
