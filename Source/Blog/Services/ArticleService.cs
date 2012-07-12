@@ -22,18 +22,16 @@ namespace Blog.Services
         public MultipleArticlePresenter Home()
         {
             var articles = articleRepository.All();
-            var multipleArticlePresenter = new MultipleArticlePresenter
-                {
-                    Articles = Map(articles.Take(FullArticleCount).ToList()),
-                };
-            multipleArticlePresenter.Index.Title = "Other Articles";
-            multipleArticlePresenter.Index.Articles = MapIndexes(articles.Skip(FullArticleCount).ToList());
-            return multipleArticlePresenter;
+            var fullArticles = articles.Take(FullArticleCount).ToList();
+            var indexes = articles.Skip(FullArticleCount).ToList();
+            return CreateMultipleArticlePresenter(fullArticles, indexes, "Other Articles");
         }
 
-        public ArticlePresenter Article(string slugTitle)
+        public MultipleArticlePresenter Article(string slugTitle)
         {
-            return Map(articleRepository.Retrieve(slugTitle));
+            var fullArticles = new List<Article> { articleRepository.Retrieve(slugTitle) };
+            var indexes = articleRepository.AllWhereNot(slugTitle);
+            return CreateMultipleArticlePresenter(fullArticles, indexes, "Other Articles");
         }
 
         public MultipleArticleIndexPresenter Index()
@@ -43,6 +41,17 @@ namespace Blog.Services
                     Title = "Article Index", 
                     Articles = MapIndexes(articleRepository.All())
                 };
+        }
+
+        private static MultipleArticlePresenter CreateMultipleArticlePresenter(IList<Article> fullArticles, IList<Article> indexes, string indexesTitle)
+        {
+            var multipleArticlePresenter = new MultipleArticlePresenter
+            {
+                Articles = Map(fullArticles),
+            };
+            multipleArticlePresenter.Index.Title = indexesTitle;
+            multipleArticlePresenter.Index.Articles = MapIndexes(indexes);
+            return multipleArticlePresenter;
         }
 
         private static IList<ArticleIndexPresenter> MapIndexes(IList<Article> articles)

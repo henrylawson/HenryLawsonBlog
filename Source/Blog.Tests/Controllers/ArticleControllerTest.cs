@@ -28,7 +28,7 @@ namespace Blog.Tests.Controllers
 
             var result = Test(articleController.Home());
 
-            Assert.That(result.ViewName, Is.EqualTo("Home"));
+            Assert.That(result.ViewName, Is.EqualTo("Multiple"));
         }
 
         [Test]
@@ -45,17 +45,17 @@ namespace Blog.Tests.Controllers
         [Test]
         public void Single_ShouldUseArticleView_Always()
         {
-            mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(CreateArticlePresenter());
+            mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(CreateMultipleArticlePresenter());
 
             var result = Test(articleController.Single("slug-title"));
 
-            Assert.That(result.ViewName, Is.EqualTo("Single"));
+            Assert.That(result.ViewName, Is.EqualTo("Multiple"));
         }
 
         [Test]
         public void Single_ShouldUseArticleServiceRetrieve_Always()
         {
-            var articlePresenter = CreateArticlePresenter();
+            var articlePresenter = CreateMultipleArticlePresenter();
             mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(articlePresenter);
 
             var result = Test(articleController.Single("slug-title"));
@@ -66,7 +66,7 @@ namespace Blog.Tests.Controllers
         [Test]
         public void Index_ShouldUseIndexView_Always()
         {
-            mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(CreateArticlePresenter());
+            mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(CreateMultipleArticlePresenter());
 
             var result = Test(articleController.Index());
 

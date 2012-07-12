@@ -25,7 +25,17 @@ namespace Blog.Repositories
 
         public virtual IList<Article> All()
         {
-            return dictionary.Values.OrderByDescending(article => article.Date).ToList();
+            return OrderedArticles().ToList();
+        }
+
+        public IList<Article> AllWhereNot(string slugTitle)
+        {
+            return OrderedArticles().Where(article => article.SlugTitle != slugTitle).ToList();
+        }
+
+        private IEnumerable<Article> OrderedArticles()
+        {
+            return dictionary.Values.OrderByDescending(article => article.Date);
         }
     }
 }

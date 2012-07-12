@@ -10,14 +10,8 @@ namespace Blog
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Article",
-                url: "article/{slugTitle}",
-                defaults: new { controller = "Article", action = "Single", slugTitle = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
                 name: "Index",
-                url: "Index",
+                url: "index",
                 defaults: new { controller = "Article", action = "Index" }
             );
 
@@ -25,6 +19,12 @@ namespace Blog
                 name: "Default",
                 url: "",
                 defaults: new { controller = "Article", action = "Home" }
+            );
+
+            routes.MapRoute(
+                name: "Article",
+                url: "{slugTitle}",
+                defaults: new { controller = "Article", action = "Single", slugTitle = UrlParameter.Optional }
             );
         }
     }

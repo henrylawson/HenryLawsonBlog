@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Blog.Models;
 using Blog.Repositories;
 using Blog.Services;
@@ -40,11 +41,15 @@ namespace Blog.Tests.Services
         public void Article_ShouldRetrieveAndReturnArticle_WhenProvidedThelugTitle()
         {
             var article = CreateArticle();
+            var indexes = CreateArticles();
             mockArticleRepository.Setup(repository => repository.Retrieve(article.SlugTitle)).Returns(article);
+            mockArticleRepository.Setup(repository => repository.AllWhereNot(article.SlugTitle)).Returns(indexes);
 
             var articlePresenter = articleService.Article(article.SlugTitle);
 
-            Assert.That(articlePresenter.SlugTitle, Is.EqualTo(article.SlugTitle));
+            Assert.That(articlePresenter.Articles.Count, Is.EqualTo(1));
+            Assert.That(articlePresenter.Articles[0].SlugTitle, Is.EqualTo(article.SlugTitle));
+            Assert.That(articlePresenter.Index.Articles.All(articleIndexPresenter => indexes.Any(index => index.SlugTitle == articleIndexPresenter.SlugTitle)));
         }
 
         [Test]

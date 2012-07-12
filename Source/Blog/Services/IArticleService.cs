@@ -6,7 +6,7 @@ namespace Blog.Services
     public interface IArticleService
     {
         MultipleArticlePresenter Home();
-        ArticlePresenter Article(string slugTitle);
+        MultipleArticlePresenter Article(string slugTitle);
         MultipleArticleIndexPresenter Index();
     }
 }

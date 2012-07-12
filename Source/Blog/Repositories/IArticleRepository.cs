@@ -7,5 +7,6 @@ namespace Blog.Repositories
     {
         Article Retrieve(string slugTitle);
         IList<Article> All();
+        IList<Article> AllWhereNot(string slugTitle);
     }
 }

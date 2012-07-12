@@ -60,5 +60,14 @@ namespace Blog.Tests.Repositories
             Assert.That(serviceArticles[0], Is.EqualTo(articles[1]));
             Assert.That(serviceArticles[1], Is.EqualTo(articles[0]));
         }
+
+        [Test]
+        public void AllWhereNot_ShouldReturnAllArticlesNotWithEqualSlugTitle_WhenExisting()
+        {
+            var serviceArticles = articleService.AllWhereNot(articles[0].SlugTitle);
+
+            Assert.That(serviceArticles.Count, Is.EqualTo(1));
+            Assert.That(serviceArticles[0], Is.EqualTo(articles[1]));
+        }
     }
 }

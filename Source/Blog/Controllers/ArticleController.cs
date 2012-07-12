@@ -14,12 +14,12 @@ namespace Blog.Controllers
 
         public ActionResult Home()
         {
-            return View("Home", articleService.Home());
+            return View("Multiple", articleService.Home());
         }
 
         public ActionResult Single(string slugTitle)
         {
-            return View("Single", articleService.Article(slugTitle));
+            return View("Multiple", articleService.Article(slugTitle));
         }
 
         public ActionResult Index()

@@ -42,6 +42,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Argotic.Common">
+      <HintPath>..\packages\Argotic.Common.2008.0.2.0\lib\Net35\Argotic.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Core">
+      <HintPath>..\packages\Argotic.Core.2008.0.2.0\lib\Net35\Argotic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Extensions">
+      <HintPath>..\packages\Argotic.Extensions.2008.0.2.0\lib\Net35\Argotic.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Web">
+      <HintPath>..\packages\Argotic.Web.2008.0.2.0\lib\Net35\Argotic.Web.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
@@ -167,10 +179,7 @@
     <Content Include="Content\Fonts\bebas.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Article\Home.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Article\Single.cshtml" />
+    <Content Include="Views\Article\Multiple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Article\_Article.cshtml" />
