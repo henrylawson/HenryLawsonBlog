@@ -13,7 +13,6 @@ namespace Blog.Data
                 return new[]
                     {
                         new Article {Title = "The Other Article", Body = "<p>Some content</p>", Date = new DateTime(2012, 6, 9)},
-                        new Article {Title = "The Newest Article", Body = "<p>Some content</p>", Date = new DateTime(2012, 9, 9)},
                         new Article {Title = "The First Article", Body = "<p>Some content</p>"},
                         new Article {Title = "The Second", Body = "<p>Some content</p>"},
                         new Article {Title = "The Third", Body = "<p>Some content</p>"},

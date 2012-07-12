@@ -67,12 +67,12 @@ namespace Blog.Services
             feed.Authors.Add(new AtomPersonConstruct("Henry Lawson"));
             feed.Links.Add(new AtomLink
                 {
-                    Uri = new Uri("http://henrylawson")
+                    Uri = new Uri("http://henrylawson.net")
                 });
             feed.Links.Add(new AtomLink
                 {
                     Relation = "self",
-                    Uri = new Uri("http://henrylawson/atom")
+                    Uri = new Uri("http://henrylawson.net/atom")
                 });
             return feed;
         }
