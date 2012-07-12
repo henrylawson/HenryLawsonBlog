@@ -139,6 +139,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\Images\light.jpg" />
     <Content Include="Content\Styles\screen-narrow.css" />
     <Content Include="Content\Styles\screen.css" />
     <Content Include="favicon.ico" />
