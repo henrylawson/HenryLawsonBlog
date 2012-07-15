@@ -4,7 +4,7 @@ namespace Blog.Presenters
 {
     public class MultipleArticlePresenter
     {
-        private MultipleArticleIndexPresenter index = new MultipleArticleIndexPresenter();
+        private readonly MultipleArticleIndexPresenter index = new MultipleArticleIndexPresenter();
 
         public IList<ArticlePresenter> Articles { get; set; }
 

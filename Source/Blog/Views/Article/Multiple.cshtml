@@ -9,4 +9,7 @@
     @Html.Partial("_Article", article)    
 }
 
-@Html.Partial("_Indexes", Model.Index)
+@if (Model.Index.Articles.Any())
+{
+    @Html.Partial("_Indexes", Model.Index)    
+}
