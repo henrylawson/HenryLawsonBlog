@@ -90,7 +90,7 @@ p {
 	padding:3px 10px 3px 10px;
 	display:inline;
 }
-.content .article .title h2 a, .article-index .other-articles .title h3  a {
+.content .article .title h2 a, .article-index .other-articles .title h3 {
     text-decoration: none;
 	color:#fff;
 }
