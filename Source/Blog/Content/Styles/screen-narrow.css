@@ -12,11 +12,28 @@
 	margin-top:40px;
 }
 .content .article .title h2 {
-	display:inline;
+	display:block;
+    margin: 0;
 }
 .content .article .title .date {
     display: block;
 	position:relative;
+}
+.other-articles ul.indexes .index .date {
+    display: block;
+    float: none;
+    width: auto;
+    border: 0;
+}
+.other-articles ul.indexes .index .right-arrow {
+    display: none;
+}
+.other-articles ul.indexes .index .title {
+    display: block;
+    float: none;
+    padding-bottom: 0;
+    line-height: 1.2;
+    margin: 5px 0 0 0;
 }
 p, li {
 	font-size:90%;

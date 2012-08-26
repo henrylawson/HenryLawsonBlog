@@ -41,6 +41,12 @@ namespace Blog.Data
                             Title = "Estimation Sessions are not for Estimating",
                             Date = new DateTime(2012, 7, 5), 
                             BodyFile = resolveBodyPath.Invoke(@"EstimationSessionsAreNotForEstimating.html")
+                        },
+                    new Article
+                        {
+                            Title = "The Service Locator Code Smell",
+                            Date = new DateTime(2012, 8, 26), 
+                            BodyFile = resolveBodyPath.Invoke(@"ServiceLocatorVsDependencyInjection.html")
                         }
                 };
             }

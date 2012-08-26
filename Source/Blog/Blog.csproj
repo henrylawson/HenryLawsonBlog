@@ -169,6 +169,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html" />
+    <Content Include="Data\Body\ServiceLocatorVsDependencyInjection.html" />
     <Content Include="Data\Body\TheMagicNumber.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
