@@ -35,6 +35,12 @@ namespace Blog.Data
                             Title = "Counting Points at Dev Done",
                             Date = new DateTime(2012, 6, 4), 
                             BodyFile = resolveBodyPath.Invoke(@"CountingPointsAtDevDone.html")
+                        },
+                    new Article
+                        {
+                            Title = "Estimation Sessions are not for Estimating",
+                            Date = new DateTime(2012, 7, 5), 
+                            BodyFile = resolveBodyPath.Invoke(@"EstimationSessionsAreNotForEstimating.html")
                         }
                 };
             }
