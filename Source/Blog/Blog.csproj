@@ -165,11 +165,15 @@
     <Content Include="Content\Images\light.jpg" />
     <Content Include="Content\Styles\screen-narrow.css" />
     <Content Include="Content\Styles\screen.css" />
+    <Content Include="Data\Body\ClosedRetrospectives.html" />
     <Content Include="Data\Body\CountingPointsAtDevDone.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Body\CountingPointsAtDevDoneInHindsight.html" />
+    <Content Include="Data\Body\DistributedTechnicalDebtBoards.html" />
     <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html" />
     <Content Include="Data\Body\ServiceLocatorVsDependencyInjection.html" />
+    <Content Include="Data\Body\TheBigRefactoringOrOptimization.html" />
     <Content Include="Data\Body\TheMagicNumber.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

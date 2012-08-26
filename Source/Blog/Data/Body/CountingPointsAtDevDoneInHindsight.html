@@ -1,0 +1,19 @@
+<p>A month ago or so I wrote about <a href="http://henrylawson.net/counting-points-at-dev-done">Counting Points at Dev Done</a> and the discussion my team back then engaged in on the topic. The summary of that article was basically:</p>
+<p><strong>Counting points at developer done goes against the traditional way of counting points after sign off. However we felt back then that one of the purposes of counting points is to communicate progress, so provided that there are no extreme fluctuations in the amount of work that is required post developer done, it should be OK.</strong></p>
+<p>Having now delivered and released the software its interesting how my opinion on this topic has shifted. I still believe that the above statement is 100% correct and that there is no problem with counting points at developer done. However the clause that is attached to the above statement is hard to ensure.</p>
+<p>The clause reads "<i>provided that there are no extreme fluctuations in the amount of work that is required post developer done</i>", having now attempted to do this I would say that counting points at developer done is risky business. Here are some reasons why:</p>
+<ul>
+	<li>You can't predict how long a story will be in QA for and just like how stories play out when "in dev" they can sometimes explode in workload in QA too</li>
+	<li>You can't control how often a story will be bounced back from the client</li>
+	<li>The team moves onto new stories instead of completely clearing out the old ones, this becomes problematic when a story bounces back but the developers have moved onto other stories</li>
+	<li>The above leads to too many stories being in play at once</li>
+	<li>Backlogs in QA don't get cleared out because the developers pick up stories for the new iteration even though the last iteration stories are still in play by QA</li>
+	<li>If the team isn't doing BDD, functional tests might not exist when refactoring for stories from the new iteration begins, this results in more bugs creeping in</li>
+</ul>
+<p>Most of the above issues are self explanatory one other problem with counting points at developer done is that it makes it even harder to plan:</p>
+<ul>
+	<li>The project will be predicted to end on a Friday and on Monday the team will prepare for release, however people forgot that done means developer done so those stories still need to be reviewed by the client and passed by QA</li>
+	<li>The overflow of the post developer done work means that this unplanned work eats into UAT and release related work</li>
+	<li>The above two points result in an extremely stressful release period as there is a lot of work to do that was never accounted for</li>
+</ul>
+<p>All in all, unless you can ensure that the above clause is kept, it's safest to count your points after sign off.</p>

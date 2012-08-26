@@ -44,6 +44,30 @@ namespace Blog.Data
                         },
                     new Article
                         {
+                            Title = "Distributed Technical Debt Walls",
+                            Date = new DateTime(2012, 7, 10), 
+                            BodyFile = resolveBodyPath.Invoke(@"DistributedTechnicalDebtBoards.html")
+                        },
+                    new Article
+                        {
+                            Title = "Closed Retrospective",
+                            Date = new DateTime(2012, 7, 12), 
+                            BodyFile = resolveBodyPath.Invoke(@"ClosedRetrospectives.html")
+                        },
+                    new Article
+                        {
+                            Title = "Counting Points at Dev Done In Hindsight",
+                            Date = new DateTime(2012, 7, 14), 
+                            BodyFile = resolveBodyPath.Invoke(@"CountingPointsAtDevDoneInHindsight.html")
+                        },
+                    new Article
+                        {
+                            Title = "The Big Refactoring Or Optimization",
+                            Date = new DateTime(2012, 7, 17), 
+                            BodyFile = resolveBodyPath.Invoke(@"TheBigRefactoringOrOptimization.html")
+                        },
+                    new Article
+                        {
                             Title = "The Service Locator Code Smell",
                             Date = new DateTime(2012, 8, 26), 
                             BodyFile = resolveBodyPath.Invoke(@"ServiceLocatorVsDependencyInjection.html")
