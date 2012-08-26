@@ -21,6 +21,7 @@ namespace Blog.Dependencies
             {
                 return container.TryGetInstance(serviceType);
             }
+
             return container.GetInstance(serviceType);
         }
 

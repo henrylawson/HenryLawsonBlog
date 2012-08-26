@@ -18,6 +18,6 @@
     display: block;
 	position:relative;
 }
-p {
+p, li {
 	font-size:90%;
 }

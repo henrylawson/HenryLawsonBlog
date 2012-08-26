@@ -165,6 +165,12 @@
     <Content Include="Content\Images\light.jpg" />
     <Content Include="Content\Styles\screen-narrow.css" />
     <Content Include="Content\Styles\screen.css" />
+    <Content Include="Data\Body\CountingPointsAtDevDone.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\TheMagicNumber.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">

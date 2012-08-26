@@ -25,7 +25,7 @@ a, a:hover, a:visited {
 a:hover {
 	color:#666;
 }
-p {
+p, li {
 	text-align:justify;
 	line-height:140%;
 }
@@ -82,7 +82,7 @@ p {
 .content .article .body {
     margin-bottom: 30px;
 }
-.content .article .body p {
+.content .article .body p, .content .article .body li {
     color: #333;
     text-shadow: 0px 0px 0px #999;
 }
@@ -92,7 +92,7 @@ p {
 }
 .content .article .title h2, .article-index .other-articles .title h3 {
 	font-family:LeagueGothic, arial;
-	font-size:25pt;
+	font-size:30pt;
 	font-weight:bold;
 	background:#000;
 	padding:3px 10px 3px 10px;
