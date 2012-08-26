@@ -9,31 +9,33 @@
 	<link rel="stylesheet" href="~/content/styles/screen.css">
 	<link rel="stylesheet" href="~/content/styles/screen-narrow.css" media="only screen and (max-width:800px)">
 </head>
-<body>
-	<div class="container">
-		<div class="header">
-			<div class="title">
-                <h1>@Html.ActionLink("Henry Lawson", "Home", "Article")</h1>
-				<div class="link-area">
-					<ul class="links">
-						<li>@Html.ActionLink("Index", "Index", "Article")</li>
-						<li>@Html.ActionLink("Atom", "Atom", "Article")</li>
-						<li><a href="http://github.com/henrylawson">Github</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-        <div class="content">
-            @RenderBody()
+    <body>
+        <div class="wrapper">
+            <div class="container">
+		        <div class="header">
+			        <div class="title">
+                        <h1>@Html.ActionLink("Henry Lawson", "Home", "Article")</h1>
+				        <div class="link-area">
+					        <ul class="links">
+						        <li>@Html.ActionLink("Index", "Index", "Article")</li>
+						        <li>@Html.ActionLink("Atom", "Atom", "Article")</li>
+						        <li><a href="http://github.com/henrylawson">Github</a></li>
+					        </ul>
+				        </div>
+			        </div>
+		        </div>
+                <div class="content">
+                    @RenderBody()
+                </div>
+		        <div class="footer">
+			        <div class="title">
+                        <h3>Who is Henry Lawson?</h3>
+			        </div>
+			        <div class="body">
+				        <p>I'm a developer from Brisbane, Australia currently living in Chennai, India. I'm a passionate agile developer and a keen C#, Java, JavaScript and Ruby programmer. I often struggle to stay on top of all the emerging frameworks and software trends so I try and keep a focus on principles and patterns because as the frameworks fade, the patterns and principles remain. The writtings here are of my own opinion and should definitely not be taken for granted and should be questioned and scrutinized by you in every way you desire. I currently work at (and love working at) <a href="http://thoughtworks.com">ThoughtWorks</a>. If you would like to pair with me sometime, consider <a href="http://join.thoughtworks.com/">joining</a> or <a href="http://www.thoughtworks.com/services">hiring</a> <a href="http://thoughtworks.com">ThoughtWorks</a>.</p>
+			        </div>
+		        </div>
+	        </div>        
         </div>
-		<div class="footer">
-			<div class="title">
-                <h3>Who is Henry Lawson?</h3>
-			</div>
-			<div class="body">
-				<p>Henry is a developer from Brisbane, Australia who is currently living in Chennai, India. He is a passionate agile evangelist and a keen C#, Java, JavaScript and Ruby developer. He struggles to stay on top of all the emerging frameworks and software trends so tries to keep his focus on principles and patterns because he belives that as the frameworks fade, the patterns and principles remain. The writtings here are of his own opinion and should definitely not be taken for granted and should be questioned and scrutinized by you in every way you desire. Henry currently works at (and loves working at) <a href="http://thoughtworks.com">ThoughtWorks</a>. If you would like to pair with Henry sometime, consider <a href="http://join.thoughtworks.com/">joining</a> or <a href="http://www.thoughtworks.com/services">hiring</a> <a href="http://thoughtworks.com">ThoughtWorks</a>.</p>
-			</div>
-		</div>
-	</div>
-</body>
+    </body>
 </html>
