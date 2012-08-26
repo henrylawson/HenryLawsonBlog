@@ -68,6 +68,12 @@ namespace Blog.Data
                         },
                     new Article
                         {
+                            Title = "Early, Late or Very Late Optimization",
+                            Date = new DateTime(2012, 8, 20), 
+                            BodyFile = resolveBodyPath.Invoke(@"EarlyLateOrVeryLateOptimization.html")
+                        },
+                    new Article
+                        {
                             Title = "The Service Locator Code Smell",
                             Date = new DateTime(2012, 8, 26), 
                             BodyFile = resolveBodyPath.Invoke(@"ServiceLocatorVsDependencyInjection.html")

@@ -171,6 +171,7 @@
     </Content>
     <Content Include="Data\Body\CountingPointsAtDevDoneInHindsight.html" />
     <Content Include="Data\Body\DistributedTechnicalDebtBoards.html" />
+    <Content Include="Data\Body\EarlyLateOrVeryLateOptimization.html" />
     <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html" />
     <Content Include="Data\Body\ServiceLocatorVsDependencyInjection.html" />
     <Content Include="Data\Body\TheBigRefactoringOrOptimization.html" />
