@@ -21,7 +21,8 @@ namespace Blog.Tests.Models
         [Test]
         public void SlugTitle_ShouldSlugifyTitle_WhenTitleSet()
         {
-            var article = new Article { Title = "A New Article Title" };
+            var article = CreateArticle();
+            article.Title = "A New Article Title";
 
             Assert.That(article.SlugTitle, Is.EqualTo("a-new-article-title"));
         }
@@ -33,6 +34,15 @@ namespace Blog.Tests.Models
             article.Title = string.Empty;
 
             Assert.That(article.SlugTitle, Is.EqualTo(string.Empty));
+        }
+
+        [Test]
+        public void SlugTitle_ShouldKeepOnlyLettersDigitsAndSpaces_Always()
+        {
+            var article = CreateArticle();
+            article.Title = @"',./?!#Hello$%^&() +_)(how=-";
+
+            Assert.That(article.SlugTitle, Is.EqualTo("hello-how"));
         }
 
         [Test]
