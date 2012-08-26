@@ -46,6 +46,14 @@ namespace Blog.Tests.Controllers
         }
 
         [Test]
+        public void Home_ShouldSetViewBagTitle_Always()
+        {
+            var result = Test(articleController.Home());
+
+            Assert.That(result.ViewBag.Title, Is.EqualTo("Home"));
+        }
+
+        [Test]
         public void Single_ShouldUseArticleView_Always()
         {
             mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(CreateMultipleArticlePresenter());
@@ -67,6 +75,17 @@ namespace Blog.Tests.Controllers
         }
 
         [Test]
+        public void Single_ShouldSetViewBagTitle_Always()
+        {
+            var multipleArticlePresenter = CreateMultipleArticlePresenter();
+            mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(multipleArticlePresenter);
+
+            var result = Test(articleController.Single("slug-title"));
+
+            Assert.That(result.ViewBag.Title, Is.EqualTo(multipleArticlePresenter.Articles[0].Title));
+        }
+
+        [Test]
         public void Index_ShouldUseIndexView_Always()
         {
             mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Returns(CreateMultipleArticlePresenter());
@@ -85,6 +104,14 @@ namespace Blog.Tests.Controllers
             var result = Test(articleController.Index());
 
             Assert.That(result.Model, Is.SameAs(articleIndexPresenters));
+        }
+
+        [Test]
+        public void Index_ShouldSetViewBagTitle_Always()
+        {
+            var result = Test(articleController.Index());
+
+            Assert.That(result.ViewBag.Title, Is.EqualTo("Index"));
         }
 
         [Test]
@@ -112,7 +139,16 @@ namespace Blog.Tests.Controllers
 
         private static MultipleArticlePresenter CreateMultipleArticlePresenter()
         {
-            return new MultipleArticlePresenter();
+            return new MultipleArticlePresenter
+            {
+                Articles = new[]
+                {
+                    new ArticlePresenter
+                    {
+                        Title = "A title"
+                    } 
+                }
+            };
         }
 
         private static ViewResult Test(ActionResult result)

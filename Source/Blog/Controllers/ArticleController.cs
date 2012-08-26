@@ -17,16 +17,20 @@ namespace Blog.Controllers
 
         public ActionResult Home()
         {
+            ViewBag.Title = "Home";
             return View("Multiple", articleService.Home());
         }
 
         public ActionResult Single(string slugTitle)
         {
-            return View("Multiple", articleService.Article(slugTitle));
+            var multipleArticlePresenter = articleService.Article(slugTitle);
+            ViewBag.Title = multipleArticlePresenter.Articles[0].Title;
+            return View("Multiple", multipleArticlePresenter);
         }
 
         public ActionResult Index()
         {
+            ViewBag.Title = "Index";
             return View("Index", articleService.Index());
         }
 

@@ -5,6 +5,8 @@ namespace Blog.Models
 {
     public class Article
     {
+        private string body;
+
         public string SlugTitle
         {
             get { return string.IsNullOrEmpty(Title) ? string.Empty : Title.Replace(" ", "-").ToLower(); }
@@ -16,7 +18,7 @@ namespace Blog.Models
 
         public string Body
         {
-            get { return File.ReadAllText(BodyFile); }
+            get { return body ?? (body = File.ReadAllText(BodyFile)); }
         }
 
         public string BodyFile { get; set; }

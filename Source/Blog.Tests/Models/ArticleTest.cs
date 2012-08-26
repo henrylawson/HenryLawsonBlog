@@ -42,11 +42,25 @@ namespace Blog.Tests.Models
 
             Assert.That(article.Body, Is.EqualTo(Body));
         }
+
+        [Test]
+        public void Body_ShouldStoreBodyFileContents_WhenQueriedOnce()
+        {
+            var article = CreateArticle();
+            
+            var firstBodyCall = article.Body;
+            File.Delete(article.BodyFile);
+
+            Assert.That(article.Body, Is.EqualTo(firstBodyCall));
+        }
         
         [TearDown]
         public void TearDown()
         {
-            File.Delete(temporaryFile);
+            if (File.Exists(temporaryFile))
+            {
+                File.Delete(temporaryFile);
+            }
         }
 
         private Article CreateArticle()
