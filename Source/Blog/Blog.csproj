@@ -173,6 +173,7 @@
     <Content Include="Data\Body\DistributedTechnicalDebtBoards.html" />
     <Content Include="Data\Body\EarlyLateOrVeryLateOptimization.html" />
     <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html" />
+    <Content Include="Data\Body\PlayingWithRealData.html" />
     <Content Include="Data\Body\ServiceLocatorVsDependencyInjection.html" />
     <Content Include="Data\Body\TheBigRefactoringOrOptimization.html" />
     <Content Include="Data\Body\TheMagicNumber.html">

@@ -56,15 +56,21 @@ namespace Blog.Data
                         },
                     new Article
                         {
-                            Title = "Counting Points at Dev Done In Hindsight",
+                            Title = "Counting Points at Dev Done in Hindsight",
                             Date = new DateTime(2012, 7, 14), 
                             BodyFile = resolveBodyPath.Invoke(@"CountingPointsAtDevDoneInHindsight.html")
                         },
                     new Article
                         {
-                            Title = "The Big Refactoring Or Optimization",
+                            Title = "The Big Refactoring or Optimization",
                             Date = new DateTime(2012, 7, 17), 
                             BodyFile = resolveBodyPath.Invoke(@"TheBigRefactoringOrOptimization.html")
+                        },
+                    new Article
+                        {
+                            Title = "Playing With Real Data",
+                            Date = new DateTime(2012, 7, 20), 
+                            BodyFile = resolveBodyPath.Invoke(@"PlayingWithRealData.html")
                         },
                     new Article
                         {
