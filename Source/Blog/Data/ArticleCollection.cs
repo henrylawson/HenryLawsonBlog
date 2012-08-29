@@ -74,6 +74,12 @@ namespace Blog.Data
                         },
                     new Article
                         {
+                            Title = "Replacing A Legacy Application",
+                            Date = new DateTime(2012, 7, 23), 
+                            BodyFile = resolveBodyPath.Invoke(@"ReplacingALegacyApplication.html")
+                        },
+                    new Article
+                        {
                             Title = "Early, Late or Very Late Optimization",
                             Date = new DateTime(2012, 8, 20), 
                             BodyFile = resolveBodyPath.Invoke(@"EarlyLateOrVeryLateOptimization.html")

@@ -1,0 +1,27 @@
+<p>When replacing a legacy application there are typically two approaches:</p>
+<ul>
+	<li>Big Bang</li>
+	<li>Piecemeal</li>
+</ul>
+<p>There are advantages and disadvantages to both approaches. The names given to each approach provides insight into how the legacy application is replaced.</p>
+<p><strong>The Big Bang approach, as its name suggests, involves replacing the legacy application in one shot</strong>. That is, on a given date the legacy application is retired and the new application is fired up. Some <i>Big Bang</i> replacements might have a transition period where both applications are running at the same time. However, a typical <i>Big Bang</i> approach will retire and start up the new application at almost the exact same time. This is done to avoid synchronizing data between the transition period when both legacy and new applications are available.</p>
+<p><strong>The Piecemeal Replacement involves splitting the legacy application into several smaller applications (if it isn't already) and releasing these applications as they are completed. On each release, the relevant parts of the legacy application are then retired</strong>. By a certain date, all parts of the legacy application will have been replaced, at this time the legacy application is retired.</p>
+<p>There are some huge advantages and disadvantages to both approaches.</p> 
+<p>The <i>Big Bang</i> pros and cons are as follows:</p>
+<ul>
+	<li>Difficult to get the application used early by users "in the wild" doing actual work until application is released, typical form of feedback is only from user acceptance testing - in a controlled environment</li>
+	<li>Projects are usually quite large, as the legacy system is often quite large, it is not unheard of for a <i>Big Bang</i> replacement spanning multiple months if not years which inevitably leads to an increased amount of risk</li>
+	<li>The new application if often only seen as a worthy replacement if it reaches feature parity with the legacy application, this leaves little room for innovation and actual problem solving - as it makes the assumption that the legacy application was perfect</li>
+	<li>An appropriate option when the legacy application is too difficult to integrate with or the overhead of integration required for a piecemeal approach is too high</li>
+</ul>
+<p>The <i>Piecemeal</i> pros and cons are:</p>
+<ul>
+	<li>The project may have a reduced risk as it has been split into smaller more manageable and possibly more controllable pieces</li>
+	<li>Parts of the application can be released into production earlier and feedback from actual users using the application day in and out can help guide the direction of future parts</li>
+	<li>There is an often, immeasurable amount of overhead in maintaining compatibility between the new replaced parts of the application and the old application</li>
+	<li>Compatibility with the legacy application is usually achieved through syncing data back to the legacy database</li>
+	<li>Complexity increases if the synced data can be altered by other legacy applications</li>
+	<li>Difficult to do without the support and partnership with original owners and developers of the legacy application - first hand knowledge of the legacy application is needed for integration with the replacing application</li>
+	<li>May require a significant amount of rework of the legacy application to black out old features as they are replaced by the new application</li>
+</ul>
+<p>The <i>Piecemeal</i> replacement approach definitely melds well with an agile methodology. Being able to release earlier and have the application exposed and tested by users sooner compliments the short iteration and feedback loops that make agile software projects so successful. For software projects that are expected to run in a time frame of  less then three months, the overhead of a <i>Piecemeal</i> replacement might not be worth it, in these situations a <i>Big Bang</i> style replacement might be more appropriate.</p>
