@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;
 using Blog.Services;
@@ -23,9 +25,16 @@ namespace Blog.Controllers
 
         public ActionResult Single(string slugTitle)
         {
-            var multipleArticlePresenter = articleService.Article(slugTitle);
-            ViewBag.Title = multipleArticlePresenter.Articles[0].Title;
-            return View("Multiple", multipleArticlePresenter);
+            try
+            {
+                var multipleArticlePresenter = articleService.Article(slugTitle);
+                ViewBag.Title = multipleArticlePresenter.Articles[0].Title;
+                return View("Multiple", multipleArticlePresenter);    
+            }
+            catch (KeyNotFoundException)
+            {
+                return RedirectToAction("Error404", "Error");
+            }
         }
 
         public ActionResult Index()

@@ -1,0 +1,14 @@
+﻿@model dynamic
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="article">
+    <div class="title">
+        <h2>@Html.ActionLink("OMG! An Error Occurred", "Home", "Article")</h2>
+    </div>
+    <div class="body">
+        <p>Something went wrong! Might want to head @Html.ActionLink("Home", "Home", "Article") until I work out what went wrong :)</p>
+    </div>
+</div>

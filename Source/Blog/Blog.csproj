@@ -138,6 +138,7 @@
   <ItemGroup>
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Data\ArticleCollection.cs" />
     <Compile Include="Data\IArticleCollection.cs" />
     <Compile Include="Dependencies\RepositoryRegistry.cs" />
@@ -222,6 +223,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Fonts\League_Gothic-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\Error404.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

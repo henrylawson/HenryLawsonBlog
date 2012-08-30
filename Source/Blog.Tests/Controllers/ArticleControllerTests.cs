@@ -1,4 +1,5 @@
-﻿using System.Net.Mime;
+﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Text;
 using System.Web.Mvc;
 using Blog.Controllers;
@@ -10,7 +11,7 @@ using NUnit.Framework;
 namespace Blog.Tests.Controllers
 {
     [TestFixture]
-    public class ArticleControllerTest
+    public class ArticleControllerTests : ControllerTextFixture
     {
         private ArticleController articleController;
         private Mock<IArticleService> mockArticleService;
@@ -127,9 +128,14 @@ namespace Blog.Tests.Controllers
             Assert.That(actionResult.ContentEncoding, Is.EqualTo(Encoding.Unicode));
         }
 
-        private static ContentResult TestAsContent(ActionResult actionResult)
+        [Test]
+        public void Single_ShouldThrow404_WhenItDoesNotExist()
         {
-            return actionResult as ContentResult;
+            mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Throws<KeyNotFoundException>();
+
+            var viewResult = articleController.Single("An article");
+
+            Assert.That(viewResult is HttpNotFoundResult, Is.True);
         }
 
         private static MultipleArticleIndexPresenter CreateMultipleArticleIndexPresenters()
@@ -149,11 +155,6 @@ namespace Blog.Tests.Controllers
                     } 
                 }
             };
-        }
-
-        private static ViewResult Test(ActionResult result)
-        {
-            return result as ViewResult;
         }
     }
 }
