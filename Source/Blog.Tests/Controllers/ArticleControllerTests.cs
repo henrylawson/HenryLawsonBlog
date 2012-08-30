@@ -129,13 +129,14 @@ namespace Blog.Tests.Controllers
         }
 
         [Test]
-        public void Single_ShouldThrow404_WhenItDoesNotExist()
+        public void Single_ShouldRedirectTo404_WhenItDoesNotExist()
         {
             mockArticleService.Setup(service => service.Article(It.IsAny<string>())).Throws<KeyNotFoundException>();
 
-            var viewResult = articleController.Single("An article");
+            var viewResult = TestRedirectToRoute(articleController.Single("An article"));
 
-            Assert.That(viewResult is HttpNotFoundResult, Is.True);
+            Assert.That(viewResult.RouteValues["Controller"], Is.EqualTo("Error"));
+            Assert.That(viewResult.RouteValues["Action"], Is.EqualTo("Error404"));
         }
 
         private static MultipleArticleIndexPresenter CreateMultipleArticleIndexPresenters()

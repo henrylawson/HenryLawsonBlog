@@ -13,5 +13,10 @@ namespace Blog.Tests.Controllers
         {
             return result as ViewResult;
         }
+
+        protected static RedirectToRouteResult TestRedirectToRoute(ActionResult actionResult)
+        {
+            return actionResult as RedirectToRouteResult;
+        }
     }
 }

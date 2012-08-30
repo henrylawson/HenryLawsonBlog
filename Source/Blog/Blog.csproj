@@ -166,18 +166,36 @@
     <Content Include="Content\Images\light.jpg" />
     <Content Include="Content\Styles\screen-narrow.css" />
     <Content Include="Content\Styles\screen.css" />
-    <Content Include="Data\Body\ClosedRetrospectives.html" />
+    <Content Include="Data\Body\ClosedRetrospectives.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Body\CountingPointsAtDevDone.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Body\CountingPointsAtDevDoneInHindsight.html" />
-    <Content Include="Data\Body\DistributedTechnicalDebtBoards.html" />
-    <Content Include="Data\Body\EarlyLateOrVeryLateOptimization.html" />
-    <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html" />
-    <Content Include="Data\Body\PlayingWithRealData.html" />
-    <Content Include="Data\Body\ReplacingALegacyApplication.html" />
-    <Content Include="Data\Body\ServiceLocatorVsDependencyInjection.html" />
-    <Content Include="Data\Body\TheBigRefactoringOrOptimization.html" />
+    <Content Include="Data\Body\CountingPointsAtDevDoneInHindsight.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\DistributedTechnicalDebtBoards.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\EarlyLateOrVeryLateOptimization.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\PlayingWithRealData.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\ReplacingALegacyApplication.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\ServiceLocatorVsDependencyInjection.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\TheBigRefactoringOrOptimization.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Body\TheMagicNumber.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

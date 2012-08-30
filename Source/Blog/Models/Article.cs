@@ -8,21 +8,21 @@ namespace Blog.Models
     {
         private string body;
 
-        public string SlugTitle
+        public virtual string SlugTitle
         {
             get { return string.IsNullOrEmpty(Title) ? string.Empty : Slugify(StripOtherChars(Title)); }
         }
 
-        public DateTime Date { get; set; }
+        public virtual DateTime Date { get; set; }
 
-        public string Title { get; set; }
+        public virtual string Title { get; set; }
 
-        public string Body
+        public virtual string Body
         {
             get { return body ?? (body = File.ReadAllText(BodyFile)); }
         }
 
-        public string BodyFile { get; set; }
+        public virtual string BodyFile { get; set; }
 
         private static string Slugify(string title)
         {

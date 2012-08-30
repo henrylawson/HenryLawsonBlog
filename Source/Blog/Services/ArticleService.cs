@@ -63,10 +63,5 @@ namespace Blog.Services
         {
             return Mapper.Map<IList<Article>, IList<ArticlePresenter>>(articles);
         }
-
-        private static ArticlePresenter Map(Article article)
-        {
-            return Mapper.Map<Article, ArticlePresenter>(article);
-        }
     }
 }

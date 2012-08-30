@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Blog.Models;
 using Blog.Repositories;
 using Blog.Services;
 using Moq;
@@ -10,6 +8,7 @@ namespace Blog.Tests.Services
     [TestFixture]
     public class ArticleAtomServiceTest
     {
+        private readonly ArticleEntityFactory articleEntityFactory = new ArticleEntityFactory();
         private Mock<IArticleRepository> mockArticleRepository;
         private ArticleAtomService articleAtomService;
 
@@ -23,7 +22,7 @@ namespace Blog.Tests.Services
         [Test]
         public void Feed_ShouldProvidedItemsAsSyndicateItems_WhenProvided()
         {
-            mockArticleRepository.Setup(repository => repository.All()).Returns(CreateArticles());
+            mockArticleRepository.Setup(repository => repository.All()).Returns(articleEntityFactory.CreateArticles());
 
             var feed = articleAtomService.Feed();
 
@@ -33,23 +32,6 @@ namespace Blog.Tests.Services
             Assert.That(feed, Is.StringContaining("Title 4"));
             Assert.That(feed, Is.StringContaining("Title 5"));
             Assert.That(feed, Is.StringContaining("Title 6"));
-        }
-
-        private static IList<Article> CreateArticles()
-        {
-            return new[]
-                {
-                    CreateArticle("Title 1"),
-                    CreateArticle("Title 2"),
-                    CreateArticle("Title 3"),
-                    CreateArticle("Title 4"),
-                    CreateArticle("Title 5"),                    CreateArticle("Title 6")
-               };
-        }
-
-        private static Article CreateArticle(string title = "Some Title")
-        {
-            return new Article { Title = title };
         }
     }
 }
