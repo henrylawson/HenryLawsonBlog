@@ -80,6 +80,12 @@ namespace Blog.Data
                         },
                     new Article
                         {
+                            Title = "Shared Responsibility and Self Organisation",
+                            Date = new DateTime(2012, 7, 23), 
+                            BodyFile = resolveBodyPath.Invoke(@"SharedResponsibilityAndSelfOrganisation.html")
+                        },
+                    new Article
+                        {
                             Title = "Early, Late or Very Late Optimization",
                             Date = new DateTime(2012, 8, 20), 
                             BodyFile = resolveBodyPath.Invoke(@"EarlyLateOrVeryLateOptimization.html")
@@ -89,6 +95,18 @@ namespace Blog.Data
                             Title = "The Service Locator Code Smell",
                             Date = new DateTime(2012, 8, 26), 
                             BodyFile = resolveBodyPath.Invoke(@"ServiceLocatorVsDependencyInjection.html")
+                        },
+                    new Article
+                        {
+                            Title = "Not Configurable Is Configurable",
+                            Date = new DateTime(2012, 8, 28), 
+                            BodyFile = resolveBodyPath.Invoke(@"NotConfigurableIsConfigurable.html")
+                        },
+                    new Article
+                        {
+                            Title = "Post Release Tweakable Software",
+                            Date = new DateTime(2012, 8, 30), 
+                            BodyFile = resolveBodyPath.Invoke(@"PostReleaseTweakableSoftware.html")
                         }
                 };
             }
