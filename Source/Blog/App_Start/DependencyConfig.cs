@@ -6,7 +6,6 @@ namespace Blog.App_Start
     {
         public static void Register(ConfigurationExpression configurationExpression)
         {
-
         }
     }
 }

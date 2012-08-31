@@ -8,3 +8,6 @@ TestResults
 # build artifacts
 Artifacts
 Build/TestResult.xml
+
+# Request reduce content
+RequestReduceContent

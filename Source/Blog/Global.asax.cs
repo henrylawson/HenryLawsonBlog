@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Blog.App_Start;
 using Blog.Dependencies;
 
 namespace Blog
