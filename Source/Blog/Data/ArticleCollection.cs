@@ -81,8 +81,14 @@ namespace Blog.Data
                     new Article
                         {
                             Title = "Shared Responsibility and Self Organisation",
-                            Date = new DateTime(2012, 7, 23), 
+                            Date = new DateTime(2012, 7, 24), 
                             BodyFile = resolveBodyPath.Invoke(@"SharedResponsibilityAndSelfOrganisation.html")
+                        },
+                    new Article
+                        {
+                            Title = "The Adapter Pattern",
+                            Date = new DateTime(2012, 7, 26), 
+                            BodyFile = resolveBodyPath.Invoke(@"TheAdapterPattern.html")
                         },
                     new Article
                         {
@@ -95,6 +101,12 @@ namespace Blog.Data
                             Title = "The Service Locator Code Smell",
                             Date = new DateTime(2012, 8, 26), 
                             BodyFile = resolveBodyPath.Invoke(@"ServiceLocatorVsDependencyInjection.html")
+                        },
+                    new Article
+                        {
+                            Title = "Layers on Layers",
+                            Date = new DateTime(2012, 8, 27), 
+                            BodyFile = resolveBodyPath.Invoke(@"LayersOnLayers.html")
                         },
                     new Article
                         {
