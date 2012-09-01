@@ -148,7 +148,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Article.cs" />
-    <Compile Include="Module\UnauthorisedModule.cs" />
     <Compile Include="Presenters\ArticleIndexPresenter.cs" />
     <Compile Include="Presenters\ArticlePresenter.cs" />
     <Compile Include="Presenters\MultipleArticleIndexPresenter.cs" />
