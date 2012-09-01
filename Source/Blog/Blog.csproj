@@ -184,6 +184,9 @@
     <Content Include="Data\Body\EstimationSessionsAreNotForEstimating.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Body\LayersOnLayers.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Body\NotConfigurableIsConfigurable.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -193,6 +196,9 @@
     <Content Include="Data\Body\PostReleaseTweakablesoftware.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Body\ProgrammersWorkflow.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Body\ReplacingALegacyApplication.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -200,6 +206,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Body\SharedResponsibilityAndSelfOrganisation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Body\TheAdapterPattern.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Body\TheBigRefactoringOrOptimization.html">
