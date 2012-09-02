@@ -110,6 +110,18 @@ namespace Blog.Data
                         },
                     new Article
                         {
+                            Title = "High Standards",
+                            Date = new DateTime(2012, 8, 7), 
+                            BodyFile = resolveBodyPath.Invoke(@"HighStandards.html")
+                        },
+                    new Article
+                        {
+                            Title = "Test Code Quality",
+                            Date = new DateTime(2012, 8, 15), 
+                            BodyFile = resolveBodyPath.Invoke(@"TestCodeQuality.html")
+                        },
+                    new Article
+                        {
                             Title = "Early, Late or Very Late Optimization",
                             Date = new DateTime(2012, 8, 20), 
                             BodyFile = resolveBodyPath.Invoke(@"EarlyLateOrVeryLateOptimization.html")
