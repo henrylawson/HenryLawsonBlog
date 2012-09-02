@@ -92,6 +92,24 @@ namespace Blog.Data
                         },
                     new Article
                         {
+                            Title = "Programmers Workflow",
+                            Date = new DateTime(2012, 7, 29), 
+                            BodyFile = resolveBodyPath.Invoke(@"ProgrammersWorkflow.html")
+                        },
+                    new Article
+                        {
+                            Title = "Feedback Cycles",
+                            Date = new DateTime(2012, 8, 1), 
+                            BodyFile = resolveBodyPath.Invoke(@"FeedbackCycles.html")
+                        },
+                    new Article
+                        {
+                            Title = "Batches",
+                            Date = new DateTime(2012, 8, 3), 
+                            BodyFile = resolveBodyPath.Invoke(@"Batches.html")
+                        },
+                    new Article
+                        {
                             Title = "Early, Late or Very Late Optimization",
                             Date = new DateTime(2012, 8, 20), 
                             BodyFile = resolveBodyPath.Invoke(@"EarlyLateOrVeryLateOptimization.html")

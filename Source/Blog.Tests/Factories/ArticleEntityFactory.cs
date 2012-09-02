@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Blog.Models;
 using Moq;
 
-namespace Blog.Tests.Services
+namespace Blog.Tests.Factories
 {
     public class ArticleEntityFactory
     {

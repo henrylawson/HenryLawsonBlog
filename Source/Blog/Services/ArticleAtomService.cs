@@ -11,8 +11,8 @@ namespace Blog.Services
 {
     public class ArticleAtomService : IArticleAtomService
     {
-        private readonly IArticleRepository articleRepository;
         private const int FeedSize = 20;
+        private readonly IArticleRepository articleRepository;
 
         public ArticleAtomService(IArticleRepository articleRepository)
         {

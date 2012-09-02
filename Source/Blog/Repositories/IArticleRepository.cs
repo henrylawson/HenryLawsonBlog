@@ -6,7 +6,9 @@ namespace Blog.Repositories
     public interface IArticleRepository
     {
         Article Retrieve(string slugTitle);
+        
         IList<Article> All();
+        
         IList<Article> AllWhereNot(string slugTitle);
     }
 }

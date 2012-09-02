@@ -1,0 +1,18 @@
+<p><strong>When a suggestion is made to do a piece of work in a software system as part of a <a href="http://en.wikipedia.org/wiki/Batch_processing">batch</a> I always try and analyze for a better alternative</strong>. Batches are a common solution to many large scale processing problems and the typical benefits of them are:</p>
+<ul>
+	<li>It takes load away from the software system to a time when it is used less frequently</li>
+	<li>It can provide a finer grain of control over the execution of expensive tasks</li>
+	<li>It can be a simple solution to prevent locking on crucial resources</li>
+	<li>It provides a better amortized cost for the usage of servers</li>
+</ul>
+<p><strong>Some of the problems I find with batch processing are that</strong>:</p>
+<ul>
+	<li>Feedback of failures are typically only realized post the batch running, these require investigation at a time when the context of the how that defect could of been introduced has passed</li>
+	<li>Batching is often used as a simple alternative to optimizing a process</li>
+	<li>Once one batch process is introduced, it doesn't take long for there to be a plethora of batched tasks as it becomes the go to solution for all large scale processing problems</li>
+	<li>Invalid data that is operated on during a batch is only realized post running, this results in a person having to analyze the batch log on a daily basis and then following up with those responsible for the invalid data</li>
+	<li>Batch processes rarely scale logarithmically, they typically scale exponentially or at best linearly with the data size</li>
+	<li>Users of the system have to wait for batch runs to occur, this can slow down business as they have to wait for jobs to be ran overnight or over the weekend, this usually adds an unmeasured operating cost to the business as time is needlessly wasted</li>
+</ul>
+<p>The outcome that many of the points above are denoting towards is that <strong>if a batch is being considered as the solution to a problem then there is probably a better way to resolve the problem</strong>. The most common alternative to a batch solution is to do delta processing. Delta processing is basically the processing of data for information that has differed or been added from when the process was last ran until now. That is, processing that is done on the <i><a href="http://en.wikipedia.org/wiki/Delta_(letter)">delta</a></i> (change) of the information.</p>
+<p>The other alternative to batches is to optimize the process so that it becomes inexpensive enough to be done continuously and when needed. Typically batches are done to perform operations over significant amounts of data for reports, updates or other processing. If this is the case then perhaps <a href="http://nosql-database.org/">a different data store</a> should be considered that has a lower cost to access, retrieve and update the data. Alternatively the common scaling solutions of <a href="http://en.wikipedia.org/wiki/Distributed_database">distribution</a> and <a href="http://en.wikipedia.org/wiki/Replication_(computing)">replication</a> could be considered.</p>

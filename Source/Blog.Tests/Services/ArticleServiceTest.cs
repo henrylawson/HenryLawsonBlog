@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Blog.Repositories;
 using Blog.Services;
+using Blog.Tests.Factories;
 using Moq;
 using NUnit.Framework;
 
