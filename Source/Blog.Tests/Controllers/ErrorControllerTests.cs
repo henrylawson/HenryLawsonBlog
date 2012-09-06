@@ -1,11 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Mime;
-using System.Text;
-using System.Web.Mvc;
-using Blog.Controllers;
-using Blog.Presenters;
-using Blog.Services;
-using Moq;
+﻿using Blog.Controllers;
 using NUnit.Framework;
 
 namespace Blog.Tests.Controllers

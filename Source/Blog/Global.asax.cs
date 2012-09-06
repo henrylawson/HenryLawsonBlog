@@ -4,8 +4,6 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Blog.App_Start;
 using Blog.Dependencies;
-using Blog.Services.Feeds;
-using StructureMap;
 
 namespace Blog
 {

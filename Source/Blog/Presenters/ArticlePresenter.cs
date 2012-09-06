@@ -1,5 +1,3 @@
-using Blog.Models;
-
 namespace Blog.Presenters
 {
     public class ArticlePresenter : ArticleIndexPresenter

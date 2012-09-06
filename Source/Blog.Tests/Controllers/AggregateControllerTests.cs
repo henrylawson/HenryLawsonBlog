@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Blog.Controllers;
-using Blog.Models;
+﻿using Blog.Controllers;
 using Blog.Services;
 using Blog.Tests.Factories;
 using Moq;
