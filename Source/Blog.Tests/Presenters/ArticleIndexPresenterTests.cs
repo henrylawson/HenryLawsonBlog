@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace Blog.Tests.Presenters
 {
     [TestFixture]
-    public class ArticleIndexPresenterTest
+    public class ArticleIndexPresenterTests
     {
         [Test]
         public void FormattedDate_ShouldFormatDate_WhenDateIsSet()

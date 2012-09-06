@@ -3,5 +3,8 @@ HenryLawsonBlog
 
 The repository for my blog.
 
-Introduce more thorough testing around atom service
-Add testing around routes
+To Do
+=====
+1. Introduce more thorough testing around atom service
+2. Add testing around routes
+3. Add testing around dependency resolver and global configuration

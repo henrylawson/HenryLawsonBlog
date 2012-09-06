@@ -56,9 +56,14 @@
     <Reference Include="Rhino.Mocks">
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap, Version=2.6.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Blog\bin\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,17 +72,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AggregateControllerTests.cs" />
     <Compile Include="Controllers\ArticleControllerTests.cs" />
     <Compile Include="Controllers\ControllerTextFixture.cs" />
     <Compile Include="Controllers\ErrorControllerTests.cs" />
     <Compile Include="Data\ArticleCollectionTests.cs" />
+    <Compile Include="Factories\AggregateEntityFactory.cs" />
     <Compile Include="Factories\ArticleEntityFactory.cs" />
-    <Compile Include="Models\ArticleTest.cs" />
-    <Compile Include="Presenters\ArticleIndexPresenterTest.cs" />
+    <Compile Include="Models\ArticleTests.cs" />
+    <Compile Include="Presenters\ArticleIndexPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ArticleRepositoryTest.cs" />
-    <Compile Include="Services\ArticleAtomServiceTest.cs" />
-    <Compile Include="Services\ArticleServiceTest.cs" />
+    <Compile Include="Services\AggregateServiceTests.cs" />
+    <Compile Include="Services\ArticleAtomServiceTests.cs" />
+    <Compile Include="Services\ArticleServiceTests.cs" />
+    <Compile Include="Services\Feeds\GitHubPublicActivityFeedTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

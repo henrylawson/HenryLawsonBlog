@@ -137,16 +137,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DependencyConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AggregateController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Data\ArticleCollection.cs" />
     <Compile Include="Data\IArticleCollection.cs" />
-    <Compile Include="Dependencies\RepositoryRegistry.cs" />
+    <Compile Include="Dependencies\DefaultInstanceRegistry.cs" />
     <Compile Include="Dependencies\StructureMapDependencyResolver.cs" />
-    <Compile Include="Dependencies\StructureMapSetup.cs" />
+    <Compile Include="Dependencies\StructureMapConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Aggregate.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Presenters\ArticleIndexPresenter.cs" />
     <Compile Include="Presenters\ArticlePresenter.cs" />
@@ -155,8 +158,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ArticleRepository.cs" />
     <Compile Include="Repositories\IArticleRepository.cs" />
+    <Compile Include="Services\AggregateService.cs" />
     <Compile Include="Services\ArticleAtomService.cs" />
     <Compile Include="Services\ArticleService.cs" />
+    <Compile Include="Services\Feeds\GitHubPublicActivityFeed.cs" />
+    <Compile Include="Services\Feeds\IAggregateFeed.cs" />
+    <Compile Include="Services\IAggregateService.cs" />
     <Compile Include="Services\IArticleAtomService.cs" />
     <Compile Include="Services\IArticleService.cs" />
   </ItemGroup>

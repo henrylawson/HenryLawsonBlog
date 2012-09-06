@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace Blog.Tests.Models
 {
     [TestFixture]
-    public class ArticleTest
+    public class ArticleTests
     {
         private const string Body = "Some string contents";
         private string temporaryFile;

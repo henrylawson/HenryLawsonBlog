@@ -1,18 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
+using System.Web.Http.Dependencies;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace Blog.Dependencies
 {
-    public class StructureMapDependencyResolver : IDependencyResolver
+    public class StructureMapDependencyResolver : System.Web.Mvc.IDependencyResolver, IDependencyResolver
     {
         private readonly IContainer container;
 
-        public StructureMapDependencyResolver(IContainer container)
+        public StructureMapDependencyResolver(Registry registry)
         {
-            this.container = container;
+            container = new Container(registry);
         }
 
         public object GetService(Type serviceType)
@@ -28,6 +29,15 @@ namespace Blog.Dependencies
         public IEnumerable<object> GetServices(Type serviceType)
         {
             return container.GetAllInstances<object>().Where(s => s.GetType() == serviceType);
+        }
+
+        public IDependencyScope BeginScope()
+        {
+            return this;
+        }
+
+        public void Dispose()
+        {
         }
     }
 }

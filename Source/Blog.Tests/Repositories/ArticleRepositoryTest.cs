@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace Blog.Tests.Repositories
 {
     [TestFixture]
-    public class ArticleServiceTest
+    public class ArticleServiceTests
     {
         private const string Title = "The Magic Title";
         private ArticleRepository articleService;

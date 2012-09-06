@@ -1,15 +1,17 @@
+using Blog.Services.Feeds;
 using StructureMap.Configuration.DSL;
 
 namespace Blog.Dependencies
 {
-    public class RepositoryRegistry : Registry
+    public class DefaultInstanceRegistry : Registry
     {
-        public RepositoryRegistry()
+        public DefaultInstanceRegistry()
         {
             Scan(assemblyScanner =>
                 {
                     assemblyScanner.TheCallingAssembly();
                     assemblyScanner.WithDefaultConventions();
+                    assemblyScanner.AddAllTypesOf<IAggregateFeed>();
                 });
         }
     }

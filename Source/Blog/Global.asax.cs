@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Blog.App_Start;
 using Blog.Dependencies;
+using Blog.Services.Feeds;
+using StructureMap;
 
 namespace Blog
 {
@@ -18,7 +21,8 @@ namespace Blog
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            StructureMapSetup.InitializeContainer();
+            WebApiConfig.RegisterRoutes(RouteTable.Routes);
+            StructureMapConfig.RegisterDependencies(GlobalConfiguration.Configuration);
         }
 
         private void OnEndRequest(object sender, EventArgs eventArgs)
