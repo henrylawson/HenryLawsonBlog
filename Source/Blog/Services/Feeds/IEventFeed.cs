@@ -3,8 +3,8 @@ using Blog.Models;
 
 namespace Blog.Services.Feeds
 {
-    public interface IAggregateFeed
+    public interface IEventFeed
     {
-        IList<Aggregate> All();
+        IList<Event> All();
     }
 }

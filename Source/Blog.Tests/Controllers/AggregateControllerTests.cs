@@ -11,25 +11,25 @@ namespace Blog.Tests.Controllers
     [TestFixture]
     public class AggregateControllerTests
     {
-        private AggregateController aggregateController;
-        private Mock<IAggregateService> mockAggregateService;
-        private AggregateEntityFactory aggregateEntityFactory;
+        private EventsController eventsController;
+        private Mock<IEventAggregateService> mockAggregateService;
+        private EventEntityFactory eventEntityFactory;
 
         [SetUp]
         public void SetUp()
         {
-            aggregateEntityFactory = new AggregateEntityFactory();
-            mockAggregateService = new Mock<IAggregateService>();
-            aggregateController = new AggregateController(mockAggregateService.Object);
+            eventEntityFactory = new EventEntityFactory();
+            mockAggregateService = new Mock<IEventAggregateService>();
+            eventsController = new EventsController(mockAggregateService.Object);
         }
 
         [Test]
         public void Get_ShouldReturnAllServiceAggregates_Always()
         {
-            var serviceAggregates = aggregateEntityFactory.CreateAggregates();
+            var serviceAggregates = eventEntityFactory.CreateAggregates();
             mockAggregateService.Setup(service => service.All()).Returns(serviceAggregates);
 
-            var aggregates = aggregateController.Get();
+            var aggregates = eventsController.Get();
 
             Assert.That(aggregates, Is.SameAs(serviceAggregates));
         }

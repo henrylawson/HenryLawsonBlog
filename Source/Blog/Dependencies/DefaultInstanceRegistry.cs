@@ -11,7 +11,7 @@ namespace Blog.Dependencies
                 {
                     assemblyScanner.TheCallingAssembly();
                     assemblyScanner.WithDefaultConventions();
-                    assemblyScanner.AddAllTypesOf<IAggregateFeed>();
+                    assemblyScanner.AddAllTypesOf<IEventFeed>();
                 });
         }
     }

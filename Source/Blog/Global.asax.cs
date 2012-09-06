@@ -20,8 +20,8 @@ namespace Blog
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            WebApiConfig.RegisterRoutes(RouteTable.Routes);
+            MvcRouteConfig.RegisterRoutes(RouteTable.Routes);
+            WebApiRouteConfig.RegisterRoutes(RouteTable.Routes);
             StructureMapConfig.RegisterDependencies(GlobalConfiguration.Configuration);
         }
 

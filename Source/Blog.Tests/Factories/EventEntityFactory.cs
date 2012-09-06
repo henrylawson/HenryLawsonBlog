@@ -4,9 +4,9 @@ using Blog.Models;
 
 namespace Blog.Tests.Factories
 {
-    public class AggregateEntityFactory
+    public class EventEntityFactory
     {
-        public IList<Aggregate> CreateAggregates()
+        public IList<Event> CreateAggregates()
         {
             return new[]
                 {
@@ -16,9 +16,9 @@ namespace Blog.Tests.Factories
                 };
         }
 
-        public Aggregate CreateAggregate()
+        public Event CreateAggregate()
         {
-            return new Aggregate
+            return new Event
                 {
                     Date = DateTime.Now
                 };

@@ -3,7 +3,7 @@ using System.Web.Routing;
 
 namespace Blog.App_Start
 {
-    public class RouteConfig
+    public class MvcRouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {

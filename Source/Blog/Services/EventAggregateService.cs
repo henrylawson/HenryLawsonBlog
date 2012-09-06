@@ -6,11 +6,11 @@ using StructureMap;
 
 namespace Blog.Services
 {
-    public class AggregateService : IAggregateService
+    public class EventAggregateService : IEventAggregateService
     {
-        public IList<Aggregate> All()
+        public IList<Event> All()
         {
-            var aggregateFeeds = ObjectFactory.GetAllInstances<IAggregateFeed>();
+            var aggregateFeeds = ObjectFactory.GetAllInstances<IEventFeed>();
             var aggregates = aggregateFeeds.SelectMany(feeds => feeds.All());
             return aggregates.OrderByDescending(aggregate => aggregate.Date).ToList();
         }

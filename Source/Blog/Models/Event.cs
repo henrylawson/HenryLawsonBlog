@@ -2,7 +2,7 @@ using System;
 
 namespace Blog.Models
 {
-    public class Aggregate
+    public class Event
     {
         public DateTime Date { get; set; }
 

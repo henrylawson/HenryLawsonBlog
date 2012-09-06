@@ -10,41 +10,41 @@ using StructureMap;
 namespace Blog.Tests.Services
 {
     [TestFixture]
-    public class AggregateServiceTests
+    public class EventAggregateServiceTests
     {
-        private IAggregateService aggregateService;
-        private Mock<IAggregateFeed> mockAggregateFeed1;
-        private Mock<IAggregateFeed> mockAggregateFeed2;
-        private AggregateEntityFactory aggregateEntityFactory;
+        private IEventAggregateService eventAggregateService;
+        private Mock<IEventFeed> mockAggregateFeed1;
+        private Mock<IEventFeed> mockAggregateFeed2;
+        private EventEntityFactory eventEntityFactory;
 
         [SetUp]
         public void SetUp()
         {
-            aggregateEntityFactory = new AggregateEntityFactory();
-            mockAggregateFeed1 = new Mock<IAggregateFeed>();
-            mockAggregateFeed2 = new Mock<IAggregateFeed>();
+            eventEntityFactory = new EventEntityFactory();
+            mockAggregateFeed1 = new Mock<IEventFeed>();
+            mockAggregateFeed2 = new Mock<IEventFeed>();
             ObjectFactory.Initialize(x =>
                 {
                     x.Register(mockAggregateFeed1.Object);
                     x.Register(mockAggregateFeed2.Object);
                 });
-            aggregateService = new AggregateService();
+            eventAggregateService = new EventAggregateService();
         }
 
         [Test]
         public void All_ShouldReturnDataFromAggregateFeedsOrederedByDateDesc_Always()
         {
-            mockAggregateFeed1.Setup(feed => feed.All()).Returns(aggregateEntityFactory.CreateAggregates());
-            mockAggregateFeed2.Setup(feed => feed.All()).Returns(aggregateEntityFactory.CreateAggregates());
+            mockAggregateFeed1.Setup(feed => feed.All()).Returns(eventEntityFactory.CreateAggregates());
+            mockAggregateFeed2.Setup(feed => feed.All()).Returns(eventEntityFactory.CreateAggregates());
 
-            var aggregates = aggregateService.All();
+            var aggregates = eventAggregateService.All();
 
             AssertThatDatesAreDescending(aggregates);
             mockAggregateFeed1.VerifyAll();
             mockAggregateFeed2.VerifyAll();
         }
 
-        private static void AssertThatDatesAreDescending(IList<Aggregate> aggregates)
+        private static void AssertThatDatesAreDescending(IList<Event> aggregates)
         {
             for (var i = 1; i < aggregates.Count; i++)
             {

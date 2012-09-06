@@ -7,7 +7,7 @@ namespace Blog.Tests.Services.Feeds
     [TestFixture]
     public class GitHubPublicActivityFeedTests
     {
-        private IAggregateFeed gitHubPublicActivityFeed;
+        private IEventFeed gitHubPublicActivityFeed;
 
         [SetUp]
         public void SetUp()

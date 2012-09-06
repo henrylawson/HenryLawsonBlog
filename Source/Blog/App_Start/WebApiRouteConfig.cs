@@ -3,11 +3,11 @@ using System.Web.Routing;
 
 namespace Blog.App_Start
 {
-    public class WebApiConfig
+    public class WebApiRouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapHttpRoute("Aggregate", "api/aggregate", new { controller = "Aggregate" });
+            routes.MapHttpRoute("Events", "api/events", new { controller = "Events" });
         } 
     }
 }
