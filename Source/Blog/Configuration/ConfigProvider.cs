@@ -7,7 +7,7 @@ namespace Blog.Configuration
         private readonly Dictionary<string, string> Settings = new Dictionary<string, string>
             {
                 { "gitHubUri", "https://github.com/henrylawson.atom" },
-                { "blogPostFeedUri", "http://henrylawson.net/atom" },
+                { "blogPostFeedUri", "http://localhost:44613/atom" },
             };
 
         public string Setting(string settingKey)
