@@ -163,8 +163,10 @@
     <Compile Include="Services\EventAggregateService.cs" />
     <Compile Include="Services\ArticleAtomService.cs" />
     <Compile Include="Services\ArticleService.cs" />
+    <Compile Include="Services\Feeds\BlogPostFeed.cs" />
     <Compile Include="Services\Feeds\GitHubPublicActivityFeed.cs" />
     <Compile Include="Services\Feeds\IEventFeed.cs" />
+    <Compile Include="Services\Feeds\SyndicateEventFeed.cs" />
     <Compile Include="Services\IEventAggregateService.cs" />
     <Compile Include="Services\IArticleAtomService.cs" />
     <Compile Include="Services\IArticleService.cs" />

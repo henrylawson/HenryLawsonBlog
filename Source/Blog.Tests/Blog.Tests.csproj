@@ -81,6 +81,7 @@
     <Compile Include="Data\ArticleCollectionTests.cs" />
     <Compile Include="Factories\EventEntityFactory.cs" />
     <Compile Include="Factories\ArticleEntityFactory.cs" />
+    <Compile Include="Factories\SyndicateitemEntityFactory.cs" />
     <Compile Include="Models\ArticleTests.cs" />
     <Compile Include="Presenters\ArticleIndexPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Services\EventAggregateServiceTests.cs" />
     <Compile Include="Services\ArticleAtomServiceTests.cs" />
     <Compile Include="Services\ArticleServiceTests.cs" />
+    <Compile Include="Services\Feeds\BlogPostFeedTests.cs" />
     <Compile Include="Services\Feeds\GitHubPublicActivityFeedTests.cs" />
     <Compile Include="Services\SyndicationServiceTests.cs" />
   </ItemGroup>
