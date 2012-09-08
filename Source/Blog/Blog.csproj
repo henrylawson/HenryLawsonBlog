@@ -73,6 +73,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,6 +138,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiRouteConfig.cs" />
+    <Compile Include="Configuration\ConfigProvider.cs" />
+    <Compile Include="Configuration\IConfigProvider.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -165,6 +168,8 @@
     <Compile Include="Services\IEventAggregateService.cs" />
     <Compile Include="Services\IArticleAtomService.cs" />
     <Compile Include="Services\IArticleService.cs" />
+    <Compile Include="Services\ISyndicationService.cs" />
+    <Compile Include="Services\SyndicationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
